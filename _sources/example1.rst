@@ -34,31 +34,30 @@ If only you could write a little Python to easily collect them all...
 It turns out that you can! Run the code below to see what it collects.
 
 .. activecode:: bb.q_example
-   :language: python
-   :nocodelens:
+   :language: python3
 
-   #Get the webpage
-   # Load libraries for web scraping
-   from bs4 import BeautifulSoup
-   import requests
-   # Get a soup from a URL 
-   url = 'https://web.archive.org/web/20250309231002/https://bbqchicken.com/locations/'
-   r = requests.get(url)
-   soup = BeautifulSoup(r.content, 'html.parser')
+   import seaborn as sns
+   import matplotlib.pyplot as plt
+   import pandas as pd
+   from figshow.main import show_figure
 
-   #Extract info from the page
-   # Get all tags of a certain type from the soup
-   tags = soup.find_all('h4')
-   # Collect info from the tags
-   collect_info = []
-   for tag in tags:
-       # Get info from tag
-       info = tag.text
-       collect_info.append(info)
+   # Create a manual dataset
+   data = {
+        'Category': ['A', 'B', 'C', 'D'],
+        'Values': [10, 25, 15, 30]
+   }
+   df = pd.DataFrame(data)
 
-   #Do something with the info
-   # Print the info
-   print(collect_info)
+   # Create a plot
+   sns.barplot(x='Category', y='Values', data=df, palette='muted')
+   plt.title("Sample Bar Chart")
+
+   # Save the plot
+   filename = "seaborn_plot1.png"
+   plt.savefig(filename)
+
+   # Show figure in this environment
+   show_figure(filename)
 
 
 This code probably seems a bit complicated. In this ebook, we will break down web scraping into a few common "plans". This example is made up of three plans. Click on each of them to learn more.

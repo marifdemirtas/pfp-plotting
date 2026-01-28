@@ -36,8 +36,19 @@ function renderStdoutImage_{instance_id}() {{
     if (!srcEl || !target) {{
       return;
     }}
-    let b64 = (srcEl.textContent || srcEl.innerText || '').trim();
-    console.log("Bae1:", b64.length);
+    let fullContent = (srcEl.textContent || srcEl.innerText || '').trim();
+
+    const startTag = '<start_figure>';
+    const endTag = '<end_figure>';
+    const startIdx = fullContent.indexOf(startTag);
+    const endIdx = fullContent.indexOf(endTag);
+    
+    let b64 = '';
+    if (startIdx !== -1 && endIdx !== -1) {{
+      b64 = fullContent.substring(startIdx + startTag.length, endIdx).trim();
+    }} else {{
+      b64 = fullContent;
+    }}
 
     if (!b64) {{
       target.innerHTML = '<div class="stdout-image-error">No Base64 content found.</div>';
@@ -47,15 +58,11 @@ function renderStdoutImage_{instance_id}() {{
     img.alt = 'Decoded image from stdout';
     img.style.maxWidth = '100%';
     img.style.height = 'auto';
-    console.log("Bae2:", b64.length);
     img.src = 'data:{mime};base64,' + b64;
     target.innerHTML = '';
     target.appendChild(img);
     console.log("Bae3:", b64.length);
-    if (btn) {{
-      btn.classList.add('active');
-      btn.textContent = 'Image Loaded';
-    }}
+
   }} catch (e) {{
     const container = document.getElementById('{instance_id}');
     if (container) {{
