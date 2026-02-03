@@ -1,9 +1,9 @@
-Before You Complete The Activity - 1
+Before You Start The Activity
 ===============================
 
 Please rate how much you agree with the each statement. Your responses will be anonymized.
 
-.. poll:: poll-post1
+.. poll:: poll-pre1
    :option_1: Strongly Disagree
    :option_2: Disagree
    :option_3: Somewhat Disagree
@@ -14,7 +14,7 @@ Please rate how much you agree with the each statement. Your responses will be a
 
    I am interested in learning how to extract data from websites using the web scraping tools such as Beautiful Soup.
 
-.. poll:: poll-post2
+.. poll:: poll-pre2
    :option_1: Strongly Disagree
    :option_2: Disagree
    :option_3: Somewhat Disagree
