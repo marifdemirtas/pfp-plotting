@@ -26,19 +26,19 @@ Bar plots are used to visualize the relationship between a categorical variable 
    :language: python3
 
    import seaborn as sns
-   from tutorial.main import load_dataset, show_figure
+   from tutorial.main import load_dataset, display
 
    weather = load_dataset("weather")
 
    figure = sns.barplot(x="month", y="temperature", data=weather)
 
    # Save the plot and show in tutorial environment
-   filename = "ct_bar_weather_1.png"
-   figure.get_figure().savefig(filename)
-   show_figure(filename)
+   display(figure)
+
 
 
 Output:
+
 .. stdoutimage::
   :source_id: ct_bar_weather_1
   :title: Output Image
@@ -53,12 +53,12 @@ Let's customize this plot by TODO [original: including `sex` column from the dat
 
    import seaborn as sns
    import matplotlib.pyplot as plt
-   from tutorial.main import load_dataset, show_figure
+   from tutorial.main import load_dataset, display
 
    weather = load_dataset("weather")
 
    # customize the bar plot
-   sns.barplot(x="class", y="fare", hue="sex", ci=None, palette="muted", data=titanic)
+   figure = sns.barplot(x="class", y="fare", hue="sex", ci=None, palette="muted", data=titanic)
 
    # add labels and title
 
@@ -67,12 +67,12 @@ Let's customize this plot by TODO [original: including `sex` column from the dat
    plt.title("Average Fare by Class and Gender on the Titanic")
 
    # Save the plot and show in tutorial environment
-   filename = "ct_bar_weather_1.png"
-   plt.savefig(filename)
-   show_figure(filename)
+   display(figure)
+
 
 
 Output:
+
 .. stdoutimage::
   :source_id: ct_bar_weather_2
   :title: Output Image

@@ -12,7 +12,7 @@ Introduction to Data Visualization with Seaborn
 =================================================
 
 .. image:: _static/ct-intro.png
-    :scale: 50%
+    :scale: 90%
     :align: center
     :alt: A list of statistical data visualization methods from Seaborn
 

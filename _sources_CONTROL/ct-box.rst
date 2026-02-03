@@ -7,8 +7,8 @@
     the license is included in the section entitled "GNU Free Documentation
     License".
 
-..  shortname:: Bar
-..  description:: Bar Plots
+..  shortname:: Box
+..  description:: Box Plots
 
 .. setup for automatic question numbering.
 
@@ -17,7 +17,7 @@
    :prefix: ex1-
    
 
-Seaborn Bar Plots
+Seaborn Box Plots
 ###########################################
 
 Box plots are a type of visualization that shows the distribution of a dataset. They are commonly used to compare the distribution of one or more variables across different categories.
@@ -27,19 +27,19 @@ Box plots are a type of visualization that shows the distribution of a dataset. 
    :language: python3
 
    import seaborn as sns
-   from tutorial.main import load_dataset
+   from tutorial.main import load_dataset, display
 
    restaurants = load_dataset("restaurants")
 
    figure = sns.boxplot(x="Name", y="rating", data=tips)
 
    # Save the plot and show in tutorial environment
-   filename = "ct_box_restaurant_1.png"
-   figure.get_figure().savefig(filename)
-   show_figure(filename)
+   display(figure)
+
 
 
 Output:
+
 .. stdoutimage::
   :source_id: ct_box_restaurant_1
   :title: Output Image

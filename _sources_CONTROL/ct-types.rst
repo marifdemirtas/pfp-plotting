@@ -27,7 +27,7 @@ Seaborn provides a wide range of plot types that can be used for data visualizat
 * Trivariate: x, y, z (contains three axis of information)
 
 .. image:: _static/ct-plot-types-fig1.png
-    :scale: 25%
+    :scale: 95%
     :align: center
     :alt: Three types of plots
 

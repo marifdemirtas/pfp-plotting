@@ -26,7 +26,7 @@ FacetGrid creates a grid of subplots based on the unique values in the categoric
 
 
 
-.. activecode:: ct_data_loading_restaurant
+.. activecode:: ct_grid_1
    :language: python3
 
    from tutorial.main import load_dataset
@@ -34,79 +34,51 @@ FacetGrid creates a grid of subplots based on the unique values in the categoric
    # Load the Restaurants dataset
    restaurants = load_dataset("restaurants")
 
-   # check the head
-   print(restaurants.head()) 
+
+   # create a FacetGrid for day vs total_bill
+   g = sns.FacetGrid(tips, col="day")
+
+   # plot histogram for total_bill in each day
+   g.map(sns.histplot, "total_bill")
+
+
+Output:
+
+.. stdoutimage::
+  :source_id: ct_grid_1
+  :title: Output Image
+  :mime: image/png
 
 
 
-
-# load the tips dataset
-
-tips = sns.load_dataset('tips')
-
-
-
-
-# create a FacetGrid for day vs total_bill
-
-g = sns.FacetGrid(tips, col="day")
-
-
-
-
-# plot histogram for total_bill in each day
-
-g.map(sns.histplot, "total_bill")
-
-
-
-
-
-
-.. activecode:: ct_data_loading_weather
+.. activecode:: ct_grid_2
    :language: python3
+   
+   import seaborn as sns
+   import matplotlib.pyplot as plt
 
-import seaborn as sns
+   # load the tips dataset from Seaborn
+   tips = sns.load_dataset("tips")
 
-import matplotlib.pyplot as plt
+   # create a box plot of total bill by day and meal time, using the "hue" parameter to differentiate between lunch and dinner
+   # customize the color scheme using the "palette" parameter
+   # adjust the linewidth and fliersize parameters to make the plot more visually appealing
+   sns.boxplot(x="day", y="total_bill", hue="time", data=tips, palette="Set3", linewidth=1.5, fliersize=4)
 
+   # add a title, xlabel, and ylabel to the plot using Matplotlib functions
+   plt.title("Box Plot of Total Bill by Day and Meal Time")
+   plt.xlabel("Day of the Week")
+   plt.ylabel("Total Bill ($)")
 
-
-
-# load the tips dataset from Seaborn
-
-tips = sns.load_dataset("tips")
-
-
-
-
-# create a box plot of total bill by day and meal time, using the "hue" parameter to differentiate between lunch and dinner
-
-# customize the color scheme using the "palette" parameter
-
-# adjust the linewidth and fliersize parameters to make the plot more visually appealing
-
-sns.boxplot(x="day", y="total_bill", hue="time", data=tips, palette="Set3", linewidth=1.5, fliersize=4)
-
-
-
-
-# add a title, xlabel, and ylabel to the plot using Matplotlib functions
-
-plt.title("Box Plot of Total Bill by Day and Meal Time")
-
-plt.xlabel("Day of the Week")
-
-plt.ylabel("Total Bill ($)")
-
-
-
-
-# display the plot
-
-plt.show()
+   # display the plot
+   plt.show()
 
 
 
 
 Output:
+
+.. stdoutimage::
+  :source_id: ct_grid_1
+  :title: Output Image
+  :mime: image/png
