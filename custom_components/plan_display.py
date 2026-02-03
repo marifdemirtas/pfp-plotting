@@ -19,7 +19,7 @@ class PlanDisplay(Directive):
     has_content = False
 
     def run(self):
-        file_path = os.path.join('_sources/_static/new', self.arguments[0])
+        file_path = os.path.join('_sources/plans.json', self.arguments[0])
 
         with open(file_path) as f:
             data = json.load(f)

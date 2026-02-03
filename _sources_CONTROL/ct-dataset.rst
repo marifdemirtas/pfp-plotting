@@ -46,11 +46,23 @@ Here's the other dataset, which shows records of the total precipitation and the
    from tutorial.main import load_dataset
 
    # Load the Restaurants dataset
-   restaurants = load_dataset("weather")
+   weather = load_dataset("weather")
 
    # check the head
    print(weather.head()) 
 
 
+We will be using a slightly different version of this dataset, where the dataset is in *long form*, which means that different measurements for the same month (e.g. total precipitation and average temperature for January 2015) are separate rows of the table, as opposed to the *wide form*, where different measurements for the same month were in different columns of the same row. Seaborn uses long form data for most operations, and this is why we provide the long form version of the weather dataset.
 
-Move to the next page.
+
+.. activecode:: ct_data_loading_weather
+   :language: python3
+
+   from tutorial.main import load_dataset
+
+   # Load the Restaurants dataset
+   weather = load_dataset("weather_long")
+
+   # check the head
+   print(weather.head()) 
+

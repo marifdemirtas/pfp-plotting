@@ -29,51 +29,30 @@ FacetGrid creates a grid of subplots based on the unique values in the categoric
 .. activecode:: ct_grid_1
    :language: python3
 
-   from tutorial.main import load_dataset
+   from tutorial.main import load_dataset, display
 
-   # Load the Restaurants dataset
-   restaurants = load_dataset("restaurants")
+   # Load the Weather dataset in long form
+   weather = load_dataset("weather_long")
 
+   # create a FacetGrid for measurement type vs measurement value
+   figure = sns.FacetGrid(weather, col="measurement_type", sharey=False, height=5, aspect=1.5)
 
-   # create a FacetGrid for day vs total_bill
-   g = sns.FacetGrid(tips, col="day")
+   # plot barplot for each measurement
+   figure.map(sns.barplot, "month", "value", palette='magma', errorbar=None)
 
-   # plot histogram for total_bill in each day
-   g.map(sns.histplot, "total_bill")
+   # OPTIONAL / TODO
+   # Plan 6: Set labels/titles
+   # g.figure.suptitle('Weather Trends of Monthly Precipitation and Temperature (2015-2024)', fontsize=16)
+   # g.set_axis_labels("Month", "Average Value")
+   # Create titles for individual subplots
+   # g.set_titles(col_template="{col_name}")
+   # Rotate x-axis labels for readability
+   # g.set_xticklabels(rotation=45)
+   # Make sure all annotations are visible within the figure area
+   # plt.tight_layout()
 
-
-Output:
-
-.. stdoutimage::
-  :source_id: ct_grid_1
-  :title: Output Image
-  :mime: image/png
-
-
-
-.. activecode:: ct_grid_2
-   :language: python3
-   
-   import seaborn as sns
-   import matplotlib.pyplot as plt
-
-   # load the tips dataset from Seaborn
-   tips = sns.load_dataset("tips")
-
-   # create a box plot of total bill by day and meal time, using the "hue" parameter to differentiate between lunch and dinner
-   # customize the color scheme using the "palette" parameter
-   # adjust the linewidth and fliersize parameters to make the plot more visually appealing
-   sns.boxplot(x="day", y="total_bill", hue="time", data=tips, palette="Set3", linewidth=1.5, fliersize=4)
-
-   # add a title, xlabel, and ylabel to the plot using Matplotlib functions
-   plt.title("Box Plot of Total Bill by Day and Meal Time")
-   plt.xlabel("Day of the Week")
-   plt.ylabel("Total Bill ($)")
-
-   # display the plot
-   plt.show()
-
-
+   # Plan 7: Visualize
+   display(figure)
 
 
 Output:
@@ -82,3 +61,6 @@ Output:
   :source_id: ct_grid_1
   :title: Output Image
   :mime: image/png
+
+
+TODO removed an example from here. Is that alright?

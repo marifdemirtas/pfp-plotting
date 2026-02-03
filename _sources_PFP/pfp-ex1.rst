@@ -20,67 +20,59 @@
 Example 1: Comparing rainfall and temperatures in Champaign in the last ten years
 ###########################################################################################################
 
-In the city of Champaign, the regional planning commission manages a weather dataset containing records of the total precipitation and the average temperature in the city from 2015 to 2024. The city wants to analyze the trends in the dataset to make sure they can accurately forecast future infrastructure needs and agricultural impacts for the local community.
+At the University of Illinois Urbana-Champaign, a group of students completed a survey asking 50 students to rate 10 restaurants around the campus. After creating their restaurant_ratings dataset, the group wants to analyze the rating distribution of the restaurants in order to determine which restaurants are the most consistent in terms of student opinion.
 
-The weather dataset may include columns such as:
+The *restaurants* dataset looks like this:
++------------+--------------------------+--------+
+| student_id | Name                     | Rating |
++============+==========================+========+
+| 0          | Maize Mexican Grill      | 4      |
++------------+--------------------------+--------+
+| 5          | Maize Mexican Grill      | 2      |
++------------+--------------------------+--------+
+| 32         | Papa Del's Pizza Factory | 4      |
++------------+--------------------------+--------+
+| 49         | Sakanaya                 | 5      |
++------------+--------------------------+--------+
+| 27         | The Bread Company        | 3      |
++------------+--------------------------+--------+
 
-+------+----------+--------------------------+---------------------------+
-| Year | Month | Total Precipitation (in) | Average Temperature (°F) |
-+======+==========+==========================+===========================+ 
-|2015 | January | 1.69 | 25.4 | 
-+------+----------+--------------------------+---------------------------+ 
-| 2015 | February | 1.6 | 20 | 
-+------+----------+--------------------------+---------------------------+ 
-| 2015 | March | 3.72 | 54.6 | 
-+------+----------+--------------------------+---------------------------+ 
-| 2015 | April | 3.72 | 54.6 | 
-+------+----------+--------------------------+---------------------------+ 
-| 2015 | May | 6.07 | 66.1 | 
-+------+----------+--------------------------+---------------------------+
+The goal is to use the student ratings of each restaurant to create 10 box plots in a single figure.
 
-The goal is to create two side-by-side bar plots using the average value of total precipitation and average temperature for each month.
-
-.. activecode:: pfp-weather-ex
+.. activecode:: pfp-restaurant-ex
    :language: python3
 
+   from tutorial.main import display, load_dataset
+
+   # Plan 1: Load data from a dataset
+   import pandas as pd
    import seaborn as sns
    import matplotlib.pyplot as plt
-   import pandas as pd
-   from figshow.main import show_figure
 
-   load dataset
+   restaurants = load_dataset('restaurants')
 
-# Plan 4: Initialize FacetGrid
-g = sns.FacetGrid(df_long, col='Measurement', sharey=False, height=5, aspect=1.5)
+   # Plan 3: Create box plot
+   # Using the 'Restaurant' column for the x-axis and 'Rating' for the y-axis
+   figure = sns.boxplot(x="restaurant", y="rating", palette="magma", data=df)
 
+   # Plan 6: Set labels/titles
+   plt.title("Ratings Distribution by Restaurant")
+   plt.xlabel("Restaurant Name")
+   plt.ylabel("Rating (1-5)")
+   # Rotate x-axis labels for readability
+   plt.xticks(rotation=45, ha='right')
+   # Set y-axis range limits and labels
+   plt.ylim(0.5, 5.5)
+   plt.yticks([1, 2, 3, 4, 5])
+   # Make sure all annotations are visible within the figure area
+   plt.tight_layout()
+   
+   # Plan 7: Display Figure
+   display(figure)
 
-# Plan 5: Map categorical plot on grid
-g.map(sns.barplot, 'Month', 'Value', palette='magma', errorbar=None)
-
-
-# Plan 6: Set labels/titles
-g.figure.suptitle('Weather Trends of Monthly Precipitation and Temperature (2015-2024)', fontsize=16)
-g.set_axis_labels("Month", "Average Value")
-# Create titles for individual subplots
-g.set_titles(col_template="{col_name}")
-# Rotate x-axis labels for readability
-g.set_xticklabels(rotation=45)
-# Make sure all annotations are visible within the figure area
-plt.tight_layout()
-
-
-# Plan 7: Visualize
-plt.show()
-
-   # Save the plot
-   filename = "seaborn_plot1.png"
-   plt.savefig(filename)
-
-   # Show figure in this environment
-   show_figure(filename)
 
 .. stdoutimage::
-  :source_id: pfp-weather-ex
+  :source_id: pfp-restaurant-ex
   :title: Output Image
   :mime: image/png
 
@@ -91,33 +83,19 @@ This code probably seems a bit complicated. In this ebook, we will break down ea
 .. toctree::
    :maxdepth: 1
 
-   plan1
-   plan3
-   plan5
+   pfp-plan1-intro
+   pfp-plan3-box
+   pfp-plan6-customize
+   pfp-plan7-display
 
-.. raw:: html
+.. plandisplay::
+   :plan: Update Records Conditionally
 
-   <pre><strong>Plan 1: Get a soup from a URL</strong>
-   <a href="/ns/books/published/cs102web/plan1.html"><pre style="background-color:#FCF3CF;">
-   # Load libraries for web scraping
-   from bs4 import BeautifulSoup
-   import requests
-   # Get a soup from a URL 
-   url = 'https://web.archive.org/web/20250309231002/https://bbqchicken.com/locations/'
-   r = requests.get(url)
-   soup = BeautifulSoup(r.content, 'html.parser')</pre></a></pre>
-   
-   <pre><strong>Plan 3: Get info from all tags of a certain type</strong><a href="/ns/books/published/cs102web/plan3.html"><pre style="background-color:#D5F5E3;">
-   # Get all tags of a certain type from the soup
-   tags = soup.find_all('h4')
-   # Collect info from the tags
-   collect_info = []
-   for tag in tags:
-       # Get info from tag
-       info = tag.text
-       collect_info.append(info)</pre></a></pre>
+.. plandisplay::
+   :plan: Update Records Conditionally
 
-   <pre><strong>Plan 5: Print the info</strong><a href="/ns/books/published/cs102web/plan5.html"><pre style="background-color:#D6EAF8;">
-   # Print the info
-   print(collect_info)</pre></a></pre>
+.. plandisplay::
+   :plan: Update Records Conditionally
 
+.. plandisplay::
+   :plan: Update Records Conditionally

@@ -30,9 +30,9 @@ Bar plots are used to visualize the relationship between a categorical variable 
 
    weather = load_dataset("weather")
 
-   figure = sns.barplot(x="month", y="temperature", data=weather)
+   figure = sns.barplot(x="month", y="temperature_average", data=weather)
 
-   # Save the plot and show in tutorial environment
+   # Display figure below
    display(figure)
 
 
@@ -45,7 +45,7 @@ Output:
   :mime: image/png
 
 
-Let's customize this plot by TODO [original: including `sex` column from the dataset.]
+Let's customize this plot by including the 'year' column from the dataset.
 
 
 .. activecode:: ct_bar_weather_2
@@ -58,13 +58,12 @@ Let's customize this plot by TODO [original: including `sex` column from the dat
    weather = load_dataset("weather")
 
    # customize the bar plot
-   figure = sns.barplot(x="class", y="fare", hue="sex", ci=None, palette="muted", data=titanic)
+   figure = sns.barplot(x="month", y="temperature_average", hue="year", ci=None, palette="muted", data=weather)
 
    # add labels and title
-
-   plt.xlabel("Class")
-   plt.ylabel("Fare")
-   plt.title("Average Fare by Class and Gender on the Titanic")
+   plt.xlabel("Month")
+   plt.ylabel("Average temperature")
+   plt.title("Average temperature by month and year in Champaign")
 
    # Save the plot and show in tutorial environment
    display(figure)

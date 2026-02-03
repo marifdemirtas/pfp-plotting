@@ -31,7 +31,7 @@ Box plots are a type of visualization that shows the distribution of a dataset. 
 
    restaurants = load_dataset("restaurants")
 
-   figure = sns.boxplot(x="Name", y="rating", data=tips)
+   figure = sns.boxplot(x="restaurant_name", y="rating", data=restaurants)
 
    # Save the plot and show in tutorial environment
    display(figure)
@@ -47,8 +47,6 @@ Output:
 
 
 Customize the box plot by TODO [orig:including `time` column from the dataset.]
-
-
 
 
 .. activecode:: ct_data_loading_weather
