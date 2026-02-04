@@ -80,11 +80,11 @@ This dataset is in *long form*, which means that different measurements for the 
    weather = load_dataset("weather_long")
    
    # Plan 4: Initialize FacetGrid
-   figure = sns.FacetGrid(df_long, col='Measurement', sharey=False, height=5, aspect=1.5)
+   grid = sns.FacetGrid(df_long, col='measurement_type', sharey=False, height=5, aspect=1.5)
 
 
    # Plan 5: Map categorical plot on grid
-   figure.map(sns.barplot, 'Month', 'Value', palette='magma', errorbar=None)
+   grid.map(sns.barplot, 'month', 'value', palette='magma', errorbar=None)
 
 
    # Plan 6: Set labels/titles
@@ -98,7 +98,7 @@ This dataset is in *long form*, which means that different measurements for the 
    plt.tight_layout()
 
    # Plan 7: Display Figure
-   display(figure)
+   display(grid)
 
 .. stdoutimage::
   :source_id: pfp-weather-ex

@@ -53,7 +53,7 @@ The goal is to use the student ratings of each restaurant to create 10 box plots
 
    # Plan 3: Create box plot
    # Using the 'Restaurant' column for the x-axis and 'Rating' for the y-axis
-   figure = sns.boxplot(x="restaurant", y="rating", palette="magma", data=df)
+   figure = sns.boxplot(x="restaurant_name", y="rating", palette="magma", data=df)
 
    # Plan 6: Set labels/titles
    plt.title("Ratings Distribution by Restaurant")

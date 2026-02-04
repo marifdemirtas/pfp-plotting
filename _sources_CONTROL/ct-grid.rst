@@ -30,15 +30,16 @@ FacetGrid creates a grid of subplots based on the unique values in the categoric
    :language: python3
 
    from tutorial.main import load_dataset, display
+   import seaborn as sns
 
    # Load the Weather dataset in long form
    weather = load_dataset("weather_long")
 
    # create a FacetGrid for measurement type vs measurement value
-   figure = sns.FacetGrid(weather, col="measurement_type", sharey=False, height=5, aspect=1.5)
+   grid = sns.FacetGrid(weather, col="measurement_type", sharey=False, height=5, aspect=1.5)
 
    # plot barplot for each measurement
-   figure.map(sns.barplot, "month", "value", palette='magma', errorbar=None)
+   grid.map(sns.barplot, "month", "value", palette='magma', errorbar=None)
 
    # OPTIONAL / TODO
    # Plan 6: Set labels/titles
@@ -52,7 +53,7 @@ FacetGrid creates a grid of subplots based on the unique values in the categoric
    # plt.tight_layout()
 
    # Plan 7: Visualize
-   display(figure)
+   display(grid)
 
 
 Output:
