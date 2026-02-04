@@ -38,8 +38,8 @@ function renderStdoutImage_{instance_id}() {{
     }}
     let fullContent = (srcEl.textContent || srcEl.innerText || '').trim();
 
-    const startTag = '<start_figure>';
-    const endTag = '<end_figure>';
+    const startTag = '@start_figure@';
+    const endTag = '@end_figure@';
     const startIdx = fullContent.indexOf(startTag);
     const endIdx = fullContent.indexOf(endTag);
     
@@ -49,6 +49,8 @@ function renderStdoutImage_{instance_id}() {{
     }} else {{
       b64 = fullContent;
     }}
+    console.log("Length of b64:", b64.length)
+    console.log("Length of fullContent:", fullContent.length)
 
     if (!b64) {{
       target.innerHTML = '<div class="stdout-image-error">No Base64 content found.</div>';
