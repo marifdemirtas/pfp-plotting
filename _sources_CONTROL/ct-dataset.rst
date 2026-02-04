@@ -55,7 +55,7 @@ Here's the other dataset, which shows records of the total precipitation and the
 We will be using a slightly different version of this dataset, where the dataset is in *long form*, which means that different measurements for the same month (e.g. total precipitation and average temperature for January 2015) are separate rows of the table, as opposed to the *wide form*, where different measurements for the same month were in different columns of the same row. Seaborn uses long form data for most operations, and this is why we provide the long form version of the weather dataset.
 
 
-.. activecode:: ct_data_loading_weather
+.. activecode:: ct_data_loading_weather_long
    :language: python3
 
    from tutorial.main import load_dataset
