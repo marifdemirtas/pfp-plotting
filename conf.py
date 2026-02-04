@@ -235,7 +235,7 @@ htmlhelp_basename = 'PythonCoursewareProjectdoc'
 #### Customizations for Runestone
 # Following are custom components
 
-from custom_components import plan_display, random_number_box, planful_worked_example, integrated_stdout_image
+from custom_components import plan_display, random_number_box, planful_worked_example, integrated_stdout_image, highlighted_textbox
 
 # Save the original setup function if it exists
 original_setup = globals().get('setup', None)
@@ -250,3 +250,4 @@ def setup(app):
     app.add_directive("plandisplay", plan_display.PlanDisplay)
     app.add_directive('planexample', planful_worked_example.PlanfulWorkedExample)
     app.add_directive('stdoutimage', integrated_stdout_image.IntegratedStdoutImage)
+    app.add_directive('highlightedtextbox', highlighted_textbox.HighlightedTextbox)
