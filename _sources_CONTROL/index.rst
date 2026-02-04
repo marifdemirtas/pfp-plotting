@@ -51,8 +51,8 @@ Table of Contents
    ct-comparison.rst
    ct-dataset.rst
    ct-types.rst
-   ct-bar.rst
    ct-box.rst
+   ct-bar.rst
    ct-grid.rst
    ct-customization.rst
 

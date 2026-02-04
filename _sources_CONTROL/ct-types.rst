@@ -33,10 +33,10 @@ Seaborn provides a wide range of plot types that can be used for data visualizat
 
 Here are some of the most commonly used plot types in Seaborn that we will cover today:
 
-* Bar Plot. A bar plot is used to visualize the relationship between a categorical variable and a continuous variable. Seaborn's barplot() function provides a simple way to create scatter plots.
 * Scatter Plot. A scatter plot is used to visualize the relationship between two variables. Seaborn's scatterplot() function provides a simple way to create scatter plots.
 * Line Plot. A line plot is used to visualize the trend of a variable over time. Seaborn's lineplot() function provides a simple way to create line plots.
 * Box Plot. A box plot is used to visualize the distribution of a variable. Seaborn's boxplot() function provides a simple way to create box plots.
+* Bar Plot. A bar plot is used to visualize the relationship between a categorical variable and a continuous variable. Seaborn's barplot() function provides a simple way to create scatter plots.
 
-Today, we will focus on examples and detailed explanations of bar and box plots.
+Today, we will focus on examples and detailed explanations of box and bar plots.
 
