@@ -8,24 +8,22 @@
 .. qnum::
    :start: 1
 
-Plan 7: Display a Plot
+Plan 7: Display Figure
 ========================
 
 .. plandisplay:: plans.json
-   :plan: Remove Records
+   :plan: Display Figure
 
-This plan is used to remove some records permanently from the table, using a condition to decide which records will be deleted.
+This plan is used to visualize the created figure.
 
-Plan 1 - When to use this plan?
+Plan 7 - When to use this plan?
 --------------------------------
-This plan is used when you want to remove records from the table using some criteria, such as dropping all student grades below some threshold, removing records that is missing a value in the specified field, or simply processing records that are marked for deletion.
+When you create a figure, you need to either visualize it or save it as an image file to be able to see it. 
 
 Plan 1 - What parts can be customized to use this plan?
 -------------------------------------------------------
-To use this plan, replace the table with the name of your table, and specify a condition using fields (columns) such that each record (row) that satisfies that condition will be deleted.
+In this tutorial, we provide a display function that shows the figures on the page. To use this plan, you may need to replace this with the appropriate display function for your coding environment, such as saving it as an image file.
 
-Plan 1 - Exercises
---------------------
 
 .. highlightedtextbox::
    :title:

@@ -17,7 +17,7 @@
    :prefix: ex1-
    
 
-Example 1: Comparing rainfall and temperatures in Champaign in the last ten years
+Example 1: Finding the most reliable restaurants in Champaign area
 ###########################################################################################################
 
 At the University of Illinois Urbana-Champaign, a group of students completed a survey asking 50 students to rate 10 restaurants around the campus. After creating their restaurant_ratings dataset, the group wants to analyze the rating distribution of the restaurants in order to determine which restaurants are the most consistent in terms of student opinion.
@@ -47,17 +47,16 @@ The goal is to use the student ratings of each restaurant to create 10 box plots
 
    from tutorial.main import display, load_dataset
 
-   # Plan 1: Load data from a dataset
+   # Plan 1: Import Packages and Load Data
    import seaborn as sns
    import matplotlib.pyplot as plt
 
    restaurants = load_dataset('restaurants')
 
-   # Plan 3: Create box plot
-   # Using the 'Restaurant' column for the x-axis and 'Rating' for the y-axis
-   figure = sns.boxplot(x="restaurant_name", y="rating", palette="magma", data=restaurants)
+   # Plan 3: Create a Box Plot
+   figure = sns.boxplot(x="restaurant_name", y="rating", palette="magma", data=restaurants, hue='price_level')
 
-   # Plan 6: Set labels/titles
+   # Plan 6: Customize Figure
    plt.title("Ratings Distribution by Restaurant")
    plt.xlabel("Restaurant Name")
    plt.ylabel("Rating (1-5)")
@@ -91,13 +90,13 @@ This code probably seems a bit complicated. In this ebook, we will break down ea
    pfp-plan7-display
 
 .. plandisplay::
-   :plan: Update Records Conditionally
+   :plan: Import Packages and Load Data
 
 .. plandisplay::
-   :plan: Update Records Conditionally
+   :plan: Create a Box Plot
 
 .. plandisplay::
-   :plan: Update Records Conditionally
+   :plan: Customize Figure
 
 .. plandisplay::
-   :plan: Update Records Conditionally
+   :plan: Display Figure

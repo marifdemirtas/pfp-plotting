@@ -2,194 +2,91 @@
   {
     "code_template": {
       "changeable_areas": {
-        "file_path": [
-          "restaurants",
-          "weather",
-          "weather_long"
+        "condition": [
+          "grade IS NULL",
+          "product_count < 2",
+          "movie_name='Avatar'",
+          "grade < 60"
+        ],
+        "table": [
+          "products",
+          "student_grades",
+          "users",
+          "movies",
+          "songs"
         ]
       },
       "changeable_areas_annotations": {
-        "file_path": "Name of the dataset to be loaded"
+        "condition": "A condition using a column in the table, such as checking whether the column is equal to/less than/greater than a specific value, or does not exist (is NULL).",
+        "table": "Name of the table to delete from"
       },
       "changeable_areas_colors": {
-        "file_path": "#ccebc5"
+        "condition": "#ccebc5",
+        "table": "#ffe4a8"
       },
       "lines": [
-   "from tutorial.main import load_dataset",
-   "import seaborn as sns",
-   "restaurants = load_dataset(@@file_path@@)"
+        "DELETE FROM @@table@@",
+        "WHERE @@condition@@;"
       ]
     },
-    "goal": "Import necessary packages and load data for visualization",
-    "group": "",
-    "order": "",
+    "goal": "Remove records where the value in a column meets a condition",
+    "group": "3",
+    "order": "1",
     "plan_metadata": {
-      "description": "",
-      "instruction": "",
-      "usage": ""
+      "description": "This plan is used to remove some records permanently from the table, using a condition to decide which records will be deleted.",
+      "instruction": "To use this plan, replace the table with the name of your table, and specify a condition using fields (columns) such that each record (row) that satisfies that condition will be deleted.",
+      "usage": "This plan is used when you want to remove records from the table using some criteria, such as dropping all student grades below some threshold, removing records that is missing a value in the specified field, or simply processing records that are marked for deletion."
     },
     "plan_name": "Import Packages and Load Data",
     "id": 0,
     "questions": [
-    ]
-  },
-  {
-    "code_template": {
-      "changeable_areas": {
-        "data": [
-          "restaurants",
-          "weather",
-          "weather_long"
+      {
+        "type": "Parsons Problem",
+        "question_id": "Parsons Problem_1",
+        "stem": "Rearrange the SQL code blocks to remove records from the 'student_grades' table where the 'grade' is less than 60.",
+        "blocks": [
+          {
+            "text": "DELETE FROM student_grades",
+            "isDistractor": false
+          },
+          {
+            "text": "WHERE grade < 60",
+            "isDistractor": false
+          },
+          {
+            "text": "WHERE COLUMN IS NULL",
+            "isDistractor": true
+          },
+          {
+            "text": "WHERE column=1",
+            "isDistractor": true
+          },
+          {
+            "text": "WHERE COLUMN < 2",
+            "isDistractor": true
+          }
+        ],
+        "correctOrder": [
+          0,
+          1
         ]
       },
-      "changeable_areas_annotations": {
-        "data": "Name of the dataset to be loaded"
-      },
-      "changeable_areas_colors": {
-        "data": "#ccebc5"
-      },
-      "lines": [
-      "figure = sns.boxplot(x='restaurant_name', y='rating', palette='magma', data=@@data@@, hue='price_level')"
-      ]
-    },
-    "goal": "Create a box plot that shows...",
-    "group": "",
-    "order": "",
-    "plan_metadata": {
-      "description": "",
-      "instruction": "",
-      "usage": ""
-    },
-    "plan_name": "Create a Box Plot",
-    "id": 2,
-    "questions": [
-    ]
-  },
-  {
-    "code_template": {
-      "changeable_areas": {
-        "data": [
-          "restaurants",
-          "weather",
-          "weather_long"
+      {
+        "type": "MCQ",
+        "question_id": "MCQ_1",
+        "stem": "You are working with a database containing student grades. Students who have taken the first midterm have a value under the field 'mt1'. This field is empty for students who have not taken the exam (denoted by the special value NULL). You need to remove records for students who have not taken the exam. Which SQL statement correctly achieves this task?",
+        "correct": "DELETE FROM student_grades WHERE mt1 IS NULL;",
+        "distractors": [
+          "DELETE FROM student_grades WHERE grade IS NULL;",
+          "DELETE FROM student_grades WHERE mt1 = 0;"
+        ],
+        "feedback": [
+          "This option checks the 'grades' column for non-existent (NULL) values, but not the mt1 column.",
+          "This option removes records with a grade exactly equal to 0, but not for students who do not have any value."
         ]
-      },
-      "changeable_areas_annotations": {
-        "data": "Name of the dataset to be loaded"
-      },
-      "changeable_areas_colors": {
-        "data": "#ccebc5"
-      },
-      "lines": [
-      "grid = sns.FacetGrid(@@data@@, col='measurement_type', sharey=False)"
-      ]
-    },
-    "goal": "Initialize FacetGrid shows...",
-    "group": "",
-    "order": "",
-    "plan_metadata": {
-      "description": "",
-      "instruction": "",
-      "usage": ""
-    },
-    "plan_name": "Initialize FacetGrid",
-    "id": 3,
-    "questions": [
+      }
     ]
   },
-  {
-    "code_template": {
-      "changeable_areas": {
-        "plot_type": [
-          "sns.barplot"
-        ]
-      },
-      "changeable_areas_annotations": {
-        "plot_type": "Name of the plot to be mapped"
-      },
-      "changeable_areas_colors": {
-        "plot_type": "#ccebc5"
-      },
-      "lines": [
-      "grid.map(@@plot_type@@, 'month', 'value', palette='magma', errorbar=None)"
-      ]
-    },
-    "goal": "Map a plot type on a FacetGrid shows...",
-    "group": "",
-    "order": "",
-    "plan_metadata": {
-      "description": "",
-      "instruction": "",
-      "usage": ""
-    },
-    "plan_name": "Map Plot To Grid",
-    "id": 4,
-    "questions": [
-    ]
-  },
-  {
-    "code_template": {
-      "changeable_areas": {
-      },
-      "changeable_areas_annotations": {
-      },
-      "changeable_areas_colors": {
-      },
-      "lines": [
-      "test"
-      ]
-    },
-    "goal": "Customization options...",
-    "group": "",
-    "order": "",
-    "plan_metadata": {
-      "description": "",
-      "instruction": "",
-      "usage": ""
-    },
-    "plan_name": "Customize Figure",
-    "id": 5,
-    "questions": [
-    ]
-  },
-  {
-    "code_template": {
-      "changeable_areas": {
-        "display_function": [
-          "display(plot)",
-          "figure.savefig('file.png')"
-        ]
-      },
-      "changeable_areas_annotations": {
-        "display_function": "Different display methods"
-      },
-      "changeable_areas_colors": {
-        "display_function": "#ccebc5"
-      },
-      "lines": [
-      "@@display_function@@"
-      ]
-    },
-    "goal": "Map a plot type on a FacetGrid shows...",
-    "group": "",
-    "order": "",
-    "plan_metadata": {
-      "description": "",
-      "instruction": "",
-      "usage": ""
-    },
-    "plan_name": "Display Figure",
-    "id": 6,
-    "questions": [
-    ]
-  },
-
-
-
-
-
-
-
   {
     "code_template": {
       "changeable_areas": {

@@ -12,19 +12,22 @@ Plan 4: Initialize a FacetGrid
 ========================
 
 .. plandisplay:: plans.json
-   :plan: Remove Records
+   :plan: Initialize FacetGrid
 
-This plan is used to remove some records permanently from the table, using a condition to decide which records will be deleted.
 
-Plan 1 - When to use this plan?
+TODO
+
+Plan 4 - When to use this plan?
 --------------------------------
-This plan is used when you want to remove records from the table using some criteria, such as dropping all student grades below some threshold, removing records that is missing a value in the specified field, or simply processing records that are marked for deletion.
 
-Plan 1 - What parts can be customized to use this plan?
+TODO
+
+Plan 4 - What parts can be customized to use this plan?
 -------------------------------------------------------
-To use this plan, replace the table with the name of your table, and specify a condition using fields (columns) such that each record (row) that satisfies that condition will be deleted.
 
-Plan 1 - Exercises
+TODO
+
+Plan 4 - Exercises
 --------------------
 
 .. highlightedtextbox::

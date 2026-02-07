@@ -41,27 +41,13 @@ FacetGrid creates a grid of subplots based on the unique values in the categoric
    # plot barplot for each measurement
    grid.map(sns.barplot, "month", "value", palette='magma', errorbar=None)
 
-   # OPTIONAL / TODO
-   # Plan 6: Set labels/titles
-   # g.figure.suptitle('Weather Trends of Monthly Precipitation and Temperature (2015-2024)', fontsize=16)
-   # g.set_axis_labels("Month", "Average Value")
-   # Create titles for individual subplots
-   # g.set_titles(col_template="{col_name}")
-   # Rotate x-axis labels for readability
-   # g.set_xticklabels(rotation=45)
-   # Make sure all annotations are visible within the figure area
-   # plt.tight_layout()
-
    # Plan 7: Visualize
    display(grid)
 
 
-Output:
+Look at the plot below:
 
 .. stdoutimage::
   :source_id: ct_grid_1
-  :title: Output Image
+  :title: Combined Plot
   :mime: image/png
-
-
-TODO removed an example from here. Is that alright?

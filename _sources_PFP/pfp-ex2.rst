@@ -7,8 +7,8 @@
     the license is included in the section entitled "GNU Free Documentation
     License".
 
-..  shortname:: Example 1
-..  description:: First example for showcasing Seaborn
+..  shortname:: Example 2
+..  description:: Second example for showcasing Seaborn
 
 .. setup for automatic question numbering.
 
@@ -17,7 +17,7 @@
    :prefix: ex1-
    
 
-Example 1: Comparing rainfall and temperatures in Champaign in the last ten years
+Example 2: Comparing rainfall and temperatures in Champaign in the last ten years
 ###########################################################################################################
 
 In the city of Champaign, the regional planning commission manages a weather dataset containing records of the total precipitation and the average temperature in the city from 2015 to 2024. The city wants to analyze the trends in the dataset to make sure they can accurately forecast future infrastructure needs and agricultural impacts for the local community.
@@ -72,30 +72,23 @@ This dataset is in *long form*, which means that different measurements for the 
 
    from tutorial.main import display, load_dataset
    
-   # Plan 1: Set Up Packages and Data
+   # Plan 1: Import Packages and Load Data
    import seaborn as sns
-   import matplotlib.pyplot as plt
-   import pandas as pd
 
    weather = load_dataset("weather_long")
    
    # Plan 4: Initialize FacetGrid
-   grid = sns.FacetGrid(df_long, col='measurement_type', sharey=False, height=5, aspect=1.5)
+   grid = sns.FacetGrid(weather, col='measurement_type', sharey=False)
 
-
-   # Plan 5: Map categorical plot on grid
+   # Plan 5: Map Plot To Grid
    grid.map(sns.barplot, 'month', 'value', palette='magma', errorbar=None)
 
 
-   # Plan 6: Set labels/titles
-   g.figure.suptitle('Weather Trends of Monthly Precipitation and Temperature (2015-2024)', fontsize=16)
-   g.set_axis_labels("Month", "Average Value")
-   # Create titles for individual subplots
-   g.set_titles(col_template="{col_name}")
+   # Plan 6: Customize Figure
    # Rotate x-axis labels for readability
-   g.set_xticklabels(rotation=45)
+   grid.set_xticklabels(rotation=45)
    # Make sure all annotations are visible within the figure area
-   plt.tight_layout()
+   grid.tight_layout()
 
    # Plan 7: Display Figure
    display(grid)
@@ -119,13 +112,16 @@ This code probably seems a bit complicated. In this ebook, we will break down ea
    pfp-plan7-display
 
 .. plandisplay::
-   :plan: Update Records Conditionally
+   :plan: Import Packages and Load Data
 
 .. plandisplay::
-   :plan: Update Records Conditionally
+   :plan: Initialize FacetGrid
 
 .. plandisplay::
-   :plan: Update Records Conditionally
+   :plan: Map Plot To Grid
 
 .. plandisplay::
-   :plan: Update Records Conditionally
+   :plan: Customize Figure
+
+.. plandisplay::
+   :plan: Display Figure

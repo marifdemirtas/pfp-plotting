@@ -48,7 +48,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Purpose-first Web Scraping'
+project = 'Learning About Seaborn'
 copyright = '2013-2020 Runestone Interactive LLC'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -118,7 +118,7 @@ html_theme = 'sphinx_bootstrap'
 #html_theme_options = {'nosidebar': 'true'}
 html_theme_options = {
     # Navigation bar title. (Default: ``project`` value)
-    'navbar_title': "Purpose-first Web Scraping",
+    'navbar_title': "Learning About Seaborn",
 
     # Tab name for entire site. (Default: "Site")
     'navbar_site_name': "Chapters",
@@ -164,7 +164,7 @@ html_theme_path = [pkg_resources.resource_filename('runestone', 'common/project_
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = 'Purpose-first Web Scraping'
+html_title = 'Learning About Seaborn'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 html_short_title ='Overview'

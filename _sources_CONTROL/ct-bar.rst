@@ -25,9 +25,9 @@ Bar plots are used to visualize the relationship between a categorical variable 
 .. activecode:: ct_bar_weather_1
    :language: python3
 
-   import seaborn as sns
    from tutorial.main import load_dataset, display
-
+   import seaborn as sns
+   
    weather = load_dataset("weather")
 
    figure = sns.barplot(x="month", y="temperature_average", data=weather)
@@ -37,11 +37,11 @@ Bar plots are used to visualize the relationship between a categorical variable 
 
 
 
-Output:
+Display the generated plot below:
 
 .. stdoutimage::
   :source_id: ct_bar_weather_1
-  :title: Output Image
+  :title: Average Temperature Bar Plot
   :mime: image/png
 
 
@@ -51,9 +51,9 @@ Let's customize this plot by including the 'year' column from the dataset.
 .. activecode:: ct_bar_weather_2
    :language: python3
 
+   from tutorial.main import load_dataset, display
    import seaborn as sns
    import matplotlib.pyplot as plt
-   from tutorial.main import load_dataset, display
 
    weather = load_dataset("weather")
 
@@ -70,9 +70,9 @@ Let's customize this plot by including the 'year' column from the dataset.
 
 
 
-Output:
+Display the modified plot below:
 
 .. stdoutimage::
   :source_id: ct_bar_weather_2
-  :title: Output Image
+  :title: Average Temperature for Each Year
   :mime: image/png

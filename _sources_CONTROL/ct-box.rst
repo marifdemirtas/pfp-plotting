@@ -26,8 +26,8 @@ Box plots are a type of visualization that shows the distribution of a dataset. 
 .. activecode:: ct_box_restaurant_1
    :language: python3
 
-   import seaborn as sns
    from tutorial.main import load_dataset, display
+   import seaborn as sns
 
    restaurants = load_dataset("restaurants")
 
@@ -37,17 +37,15 @@ Box plots are a type of visualization that shows the distribution of a dataset. 
    display(figure)
 
 
-
-Output:
+Display the figure below:
 
 .. stdoutimage::
   :source_id: ct_box_restaurant_1
-  :title: Output Image
+  :title: Restaurant Box Plot
   :mime: image/png
 
 
-Customize the box plot by TODO [orig:including `time` column from the dataset.]
-
+Customize the box plot by grouping restaurants by price level.
 
 .. activecode:: ct_box_2
    :language: python3
@@ -58,28 +56,22 @@ Customize the box plot by TODO [orig:including `time` column from the dataset.]
    # load the tips dataset from Seaborn
    restaurants = load_dataset("restaurants")
 
-   # create a box plot of total bill by day and meal time, using the "hue" parameter to differentiate between lunch and dinner
+   # create a box plot of ratings by restaurant and price level, using the "hue" parameter to differentiate between cheaper and expensive restaurants
    # customize the color scheme using the "palette" parameter
-   # adjust the linewidth and fliersize parameters to make the plot more visually appealing
-      # , palette="Set3", linewidth=1.5, fliersize=4
-   figure = sns.boxplot(x="restaurant_name", y="rating", hue="student_id", data=restaurants)
+   figure = sns.boxplot(x="restaurant_name", y="rating", hue="price_level", data=restaurants, palette="Set3")
 
-   # add a title, xlabel, and ylabel to the plot using Matplotlib function
-   #plt.title("Box Plot of Rating by Student and Restaurant")
-   #plt.xlabel("Restaurants")
-   #plt.ylabel("Rating")
+   # add labels and title
+   plt.xlabel("Restaurant")
+   plt.ylabel("Ratings")
 
    # display the plot
    display(figure)
 
 
-
-
-
-Output:
+Display the output of the modified plot below:
 
 .. stdoutimage::
   :source_id: ct_box_2
-  :title: Output Image
+  :title: Improved Restaurant Box Plot
   :mime: image/png
 

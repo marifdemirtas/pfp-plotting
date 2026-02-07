@@ -8,23 +8,23 @@
 .. qnum::
    :start: 1
 
-Plan 3: Create a box plot
+Plan 3: Create a Box Plot
 ========================
 
 .. plandisplay:: plans.json
-   :plan: Remove Records
+   :plan: Create a Box Plot
 
-This plan is used to remove some records permanently from the table, using a condition to decide which records will be deleted.
+A box plot is a great way to visualize the distribution and outliers in your dataset. 
 
-Plan 1 - When to use this plan?
+Plan 3 - When to use this plan?
 --------------------------------
-This plan is used when you want to remove records from the table using some criteria, such as dropping all student grades below some threshold, removing records that is missing a value in the specified field, or simply processing records that are marked for deletion.
+TODO
 
-Plan 1 - What parts can be customized to use this plan?
+
+Plan 3 - What parts can be customized to use this plan?
 -------------------------------------------------------
-To use this plan, replace the table with the name of your table, and specify a condition using fields (columns) such that each record (row) that satisfies that condition will be deleted.
 
-Plan 1 - Exercises
+Plan 3 - Exercises
 --------------------
 
 .. highlightedtextbox::
