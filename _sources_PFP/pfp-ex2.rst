@@ -75,20 +75,18 @@ This dataset is in *long form*, which means that different measurements for the 
    # Plan 1: Import Packages and Load Data
    import seaborn as sns
 
-   weather = load_dataset("weather_long")
+   dataset = load_dataset("weather_long")
    
    # Plan 4: Initialize FacetGrid
-   grid = sns.FacetGrid(weather, col='measurement_type', sharey=False)
+   grid = sns.FacetGrid(dataset, col='measurement_type', sharey=False)
 
    # Plan 5: Map Plot To Grid
    grid.map(sns.barplot, 'month', 'value', palette='magma', errorbar=None)
 
-
    # Plan 6: Customize Figure
-   # Rotate x-axis labels for readability
+   grid.set_xlabels("Month")
+   grid.set_ylabels("Average Value")
    grid.set_xticklabels(rotation=45)
-   # Make sure all annotations are visible within the figure area
-   grid.tight_layout()
 
    # Plan 7: Display Figure
    display(grid)
@@ -99,7 +97,7 @@ This dataset is in *long form*, which means that different measurements for the 
   :mime: image/png
 
 
-This code probably seems a bit complicated. In this ebook, we will break down each example into a few common "plans". This example is made up of five plans. Click on each of them to learn more.
+This code probably seems a bit complicated. We have two new plans, in addition to plans from the previous example. Click on each of them to learn more.
 
 
 .. toctree::

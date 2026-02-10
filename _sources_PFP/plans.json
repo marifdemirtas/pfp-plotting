@@ -17,7 +17,7 @@
       "lines": [
    "from tutorial.main import load_dataset",
    "import seaborn as sns",
-   "restaurants = load_dataset(@@file_path@@)"
+   "dataset = load_dataset(@@file_path@@)"
       ]
     },
     "goal": "Import necessary packages and load data for visualization",
@@ -36,20 +36,35 @@
   {
     "code_template": {
       "changeable_areas": {
-        "data": [
-          "restaurants",
-          "weather",
-          "weather_long"
+        "x": [
+          "restaurant_name"
+        ],
+        "y": [
+          "rating"
+        ],
+        "hue": [
+          "cost"
+        ],
+        "palette": [
+          "magma",
+          "Set2",
+          "Set3"
         ]
       },
       "changeable_areas_annotations": {
-        "data": "Name of the dataset to be loaded"
+        "x": "The column to be plotted on the horizontal axis",
+        "y": "The column to be plotted on the vertical axis", 
+        "hue": "The column to be used for categorizing variables (optional)",
+        "palette": "The color palette for the plot"
       },
       "changeable_areas_colors": {
-        "data": "#ccebc5"
+        "x": "#ff1100",
+        "y": "#ff1100", 
+        "hue": "#ff1100",
+        "palette": "#ff1100"
       },
       "lines": [
-      "figure = sns.boxplot(x='restaurant_name', y='rating', palette='magma', data=@@data@@, hue='price_level')"
+      "figure = sns.boxplot(x=@@x@@, y=@@y@@, hue=@@hue@@, palette=@@palette@@, data=dataset)"
       ]
     },
     "goal": "Create a box plot that shows...",
@@ -67,21 +82,27 @@
   },
   {
     "code_template": {
-      "changeable_areas": {
-        "data": [
-          "restaurants",
-          "weather",
-          "weather_long"
-        ]
-      },
-      "changeable_areas_annotations": {
-        "data": "Name of the dataset to be loaded"
-      },
-      "changeable_areas_colors": {
-        "data": "#ccebc5"
-      },
+"changeable_areas": {
+    "measurement": [
+      "temp",
+      "humidity",
+      "rainfall"
+    ],
+    "share_y_axis": [
+      "True",
+      "False"
+    ]
+  },
+  "changeable_areas_annotations": {
+    "measurement": "The column used to create separate subplots (columns)",
+    "share_y_axis": "Whether subplots should share the same vertical scale"
+  },
+  "changeable_areas_colors": {
+    "measurement": "#74B49B",
+    "share_y_axis": "#5C8D89"
+  },
       "lines": [
-      "grid = sns.FacetGrid(@@data@@, col='measurement_type', sharey=False)"
+      "grid = sns.FacetGrid(dataset, col=@@measurement@@, sharey=@@share_y_axis@@)"
       ]
     },
     "goal": "Initialize FacetGrid shows...",
@@ -100,18 +121,42 @@
   {
     "code_template": {
       "changeable_areas": {
-        "plot_type": [
-          "sns.barplot"
-        ]
-      },
-      "changeable_areas_annotations": {
-        "plot_type": "Name of the plot to be mapped"
-      },
-      "changeable_areas_colors": {
-        "plot_type": "#ccebc5"
-      },
+    "plot_type": [
+      "sns.barplot",
+      "sns.scatterplot",
+      "sns.lineplot"
+    ],
+    "x": [
+      "month",
+      "category",
+      "day"
+    ],
+    "y": [
+      "total",
+      "value",
+      "count"
+    ],
+    "palette": [
+      "deep",
+      "muted",
+      "pastel",
+      "rocket"
+    ]
+  },
+  "changeable_areas_annotations": {
+    "plot_type": "The Seaborn plotting function to apply to the grid",
+    "x": "The column for the horizontal axis within each facet",
+    "y": "The column for the vertical axis within each facet",
+    "palette": "The color mapping for the mapped plots"
+  },
+  "changeable_areas_colors": {
+    "plot_type": "#8B5CF6",
+    "x": "#6366F1",
+    "y": "#6366F1",
+    "palette": "#94A3B8"
+  },
       "lines": [
-      "grid.map(@@plot_type@@, 'month', 'value', palette='magma', errorbar=None)"
+      "grid.map(@@plot_type@@, @@x@@, @@y@@, palette=@@palette@@, errorbar=None)"
       ]
     },
     "goal": "Map a plot type on a FacetGrid shows...",
@@ -129,14 +174,39 @@
   },
   {
     "code_template": {
-      "changeable_areas": {
-      },
-      "changeable_areas_annotations": {
-      },
-      "changeable_areas_colors": {
-      },
+"changeable_areas": {
+      "title": [
+        "My Plot Title"
+      ],
+      "xlabel": [
+        "X Axis Label"
+      ],
+      "ylabel": [
+        "Y Axis Label"
+      ],
+      "angle": [
+        0,
+        45,
+        90
+      ]
+    },
+    "changeable_areas_annotations": {
+      "title": "The main title of the figure",
+      "xlabel": "Label for the horizontal axis",
+      "ylabel": "Label for the vertical axis",
+      "angle": "Rotation angle for x-axis tick labels (in degrees)"
+    },
+    "changeable_areas_colors": {
+      "title": "#4F46E5",
+      "xlabel": "#4F46E5",
+      "ylabel": "#4F46E5",
+      "angle": "#0EA5E9"
+    },
       "lines": [
-      "test"
+   "figure.set_title(@@title@@)",
+   "figure.set_xlabel(@@xlabel@@)",
+   "figure.set_ylabel(@@ylabel@@)",
+   "figure.tick_params(axis='x', labelrotation=@@angle@@)"
       ]
     },
     "goal": "Customization options...",

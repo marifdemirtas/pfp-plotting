@@ -24,10 +24,10 @@ For Seaborn, we usually have to put the data into something called a Pandas Data
    from tutorial.main import load_dataset
 
    # Load the Restaurants dataset
-   restaurants = load_dataset("restaurants")
+   dataset = load_dataset("restaurants")
 
    # check the head
-   print(restaurants.head()) 
+   print(dataset.head()) 
 
 
 Plan 1 - When to use this plan?

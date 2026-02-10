@@ -25,20 +25,19 @@ At the University of Illinois Urbana-Champaign, a group of students completed a 
 The *restaurants* dataset looks like this:
 
 
-+------------+--------------------------+--------+
-| student_id | Name                     | Rating |
-+============+==========================+========+
-| 0          | Maize Mexican Grill      | 4      |
-+------------+--------------------------+--------+
-| 5          | Maize Mexican Grill      | 2      |
-+------------+--------------------------+--------+
-| 32         | Papa Del's Pizza Factory | 4      |
-+------------+--------------------------+--------+
-| 49         | Sakanaya                 | 5      |
-+------------+--------------------------+--------+
-| 27         | The Bread Company        | 3      |
-+------------+--------------------------+--------+
-
++------------+--------------------------+--------+--------+
+| student_id | Name                     | Rating | Cost   |
++============+==========================+========+========+
+| 0          | Maize Mexican Grill      | 4      | Low    |
++------------+--------------------------+--------+--------+
+| 5          | Maize Mexican Grill      | 2      | Low    |
++------------+--------------------------+--------+--------+
+| 32         | Papa Del's Pizza Factory | 4      | High   |
++------------+--------------------------+--------+--------+
+| 49         | Sakanaya                 | 5      | High   |
++------------+--------------------------+--------+--------+
+| 27         | The Bread Company        | 3      | Medium |
++------------+--------------------------+--------+--------+
 
 The goal is to use the student ratings of each restaurant to create 10 box plots in a single figure.
 
@@ -49,24 +48,20 @@ The goal is to use the student ratings of each restaurant to create 10 box plots
 
    # Plan 1: Import Packages and Load Data
    import seaborn as sns
-   import matplotlib.pyplot as plt
 
-   restaurants = load_dataset('restaurants')
+   dataset = load_dataset('restaurants')
 
    # Plan 3: Create a Box Plot
-   figure = sns.boxplot(x="restaurant_name", y="rating", palette="magma", data=restaurants, hue='price_level')
+   figure = sns.boxplot(x="restaurant_name", y="rating", hue="cost", palette="magma", data=dataset)
 
-   # Plan 6: Customize Figure
-   plt.title("Ratings Distribution by Restaurant")
-   plt.xlabel("Restaurant Name")
-   plt.ylabel("Rating (1-5)")
+
+   # Plan 6: Customize Figure  
+   figure.set_title("Most reliable Champaign restaurants, organized by cost")
+   figure.set_xlabel("Restaurant Name")
+   figure.set_ylabel("Rating (1-5)")
    # Rotate x-axis labels for readability
-   plt.xticks(rotation=45, ha='right')
-   # Set y-axis range limits and labels
-   plt.ylim(0.5, 5.5)
-   plt.yticks([1, 2, 3, 4, 5])
-   # Make sure all annotations are visible within the figure area
-   plt.tight_layout()
+   figure.tick_params(axis='x', labelrotation=90)
+
    
    # Plan 7: Display Figure
    display(figure)
@@ -78,7 +73,7 @@ The goal is to use the student ratings of each restaurant to create 10 box plots
   :mime: image/png
 
 
-This code probably seems a bit complicated. In this ebook, we will break down each example into a few common "plans". This example is made up of five plans. Click on each of them to learn more.
+This code probably seems a bit complicated. In this ebook, we will break down each example into a few common "plans". This example is made up of four plans. Click on each of them to learn more.
 
 
 .. toctree::
@@ -100,3 +95,11 @@ This code probably seems a bit complicated. In this ebook, we will break down ea
 
 .. plandisplay::
    :plan: Display Figure
+
+.. highlightedtextbox::
+   :title:
+   :color: #f4e36e
+   :highlight-color: #ffe53e
+   :highlight-on-load:
+   
+   Click on the arrow on the bottom right to move to the page for the first plan.
