@@ -53,11 +53,11 @@ function renderStdoutImage_{instance_id}() {{
     console.log("Length of fullContent:", fullContent.length)
 
     if (!b64) {{
-      target.innerHTML = '<div class="stdout-image-error">No Base64 content found.</div>';
+      target.innerHTML = '<div class="stdout-image-error">No plot found! Have you created a plot above?</div>';
       return;
     }}
     const img = document.createElement('img');
-    img.alt = 'Decoded image from stdout';
+    img.alt = 'Plot could not be loaded.';
     img.style.maxWidth = '100%';
     img.style.height = 'auto';
     img.src = 'data:{mime};base64,' + b64;
@@ -70,7 +70,7 @@ function renderStdoutImage_{instance_id}() {{
     if (container) {{
       const target = container.querySelector('.stdout-image-target');
       if (target) {{
-        target.innerHTML = '<div class="stdout-image-error">Failed to render image.</div>';
+        target.innerHTML = '<div class="stdout-image-error">Failed to show image.</div>';
       }}
     }}
   }}

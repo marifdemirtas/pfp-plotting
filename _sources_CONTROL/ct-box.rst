@@ -32,6 +32,7 @@ Box plots are a type of visualization that shows the distribution of a dataset. 
    restaurants = load_dataset("restaurants")
 
    figure = sns.boxplot(x="restaurant_name", y="rating", data=restaurants)
+   figure.tick_params(axis='x', labelrotation=90)
 
    # Save the plot and show in tutorial environment
    display(figure)
@@ -58,11 +59,8 @@ Customize the box plot by grouping restaurants by price level.
 
    # create a box plot of ratings by restaurant and price level, using the "hue" parameter to differentiate between cheaper and expensive restaurants
    # customize the color scheme using the "palette" parameter
-   figure = sns.boxplot(x="restaurant_name", y="rating", hue="price_level", data=restaurants, palette="Set3")
-
-   # add labels and title
-   plt.xlabel("Restaurant")
-   plt.ylabel("Ratings")
+   figure = sns.boxplot(x="restaurant_name", y="rating", hue="cost", data=restaurants, palette='magma')
+   figure.tick_params(axis='x', labelrotation=90)
 
    # display the plot
    display(figure)
@@ -75,3 +73,11 @@ Display the output of the modified plot below:
   :title: Improved Restaurant Box Plot
   :mime: image/png
 
+
+.. highlightedtextbox::
+   :title:
+   :color: #f4e36e
+   :highlight-color: #ffe53e
+   :highlight-on-load:
+   
+   Click on the arrow on the bottom right to move to the next page.

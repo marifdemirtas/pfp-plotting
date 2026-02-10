@@ -30,3 +30,11 @@ Another key difference between Matplotlib and Seaborn is their default styles an
 
 While both libraries have their strengths and weaknesses, Seaborn is generally better suited for creating statistical graphics and exploratory data analysis, while Matplotlib is better suited for creating highly customizable plots for presentations and publications. However, it is worth noting that Seaborn is built on top of Matplotlib, and the two libraries can be used together to create complex, highly customizable visualizations that leverage the strengths of both libraries.
 
+
+.. highlightedtextbox::
+   :title:
+   :color: #f4e36e
+   :highlight-color: #ffe53e
+   :highlight-on-load:
+   
+   Click on the arrow on the bottom right to move to the next page.

@@ -31,6 +31,7 @@ Bar plots are used to visualize the relationship between a categorical variable 
    weather = load_dataset("weather")
 
    figure = sns.barplot(x="month", y="temperature_average", data=weather)
+   figure.tick_params(axis='x', labelrotation=45)
 
    # Display figure below
    display(figure)
@@ -58,7 +59,8 @@ Let's customize this plot by including the 'year' column from the dataset.
    weather = load_dataset("weather")
 
    # customize the bar plot
-   figure = sns.barplot(x="month", y="temperature_average", hue="year", ci=None, palette="muted", data=weather)
+   figure = sns.barplot(x="month", y="temperature_average", hue="year", palette="muted", data=weather)
+   figure.tick_params(axis='x', labelrotation=45)
 
    # add labels and title
    plt.xlabel("Month")
@@ -76,3 +78,12 @@ Display the modified plot below:
   :source_id: ct_bar_weather_2
   :title: Average Temperature for Each Year
   :mime: image/png
+
+
+.. highlightedtextbox::
+   :title:
+   :color: #f4e36e
+   :highlight-color: #ffe53e
+   :highlight-on-load:
+   
+   Click on the arrow on the bottom right to move to the next page.

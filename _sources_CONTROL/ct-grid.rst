@@ -51,3 +51,12 @@ Look at the plot below:
   :source_id: ct_grid_1
   :title: Combined Plot
   :mime: image/png
+
+
+.. highlightedtextbox::
+   :title:
+   :color: #f4e36e
+   :highlight-color: #ffe53e
+   :highlight-on-load:
+   
+   Click on the arrow on the bottom right to move to the next page.

@@ -40,3 +40,11 @@ Here are some of the most commonly used plot types in Seaborn that we will cover
 
 Today, we will focus on examples and detailed explanations of box and bar plots.
 
+
+.. highlightedtextbox::
+   :title:
+   :color: #f4e36e
+   :highlight-color: #ffe53e
+   :highlight-on-load:
+   
+   Click on the arrow on the bottom right to move to the next page.

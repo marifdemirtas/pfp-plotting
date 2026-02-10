@@ -63,3 +63,12 @@ Putting it together
    :maxdepth: 1
 
    ct-exercise.rst
+
+
+.. highlightedtextbox::
+   :title:
+   :color: #f4e36e
+   :highlight-color: #ffe53e
+   :highlight-on-load:
+   
+   Click on the arrow on the bottom right to start from the first page.

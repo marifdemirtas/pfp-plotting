@@ -41,11 +41,8 @@ Here is an example of how you can change the color palettes of your seaborn plot
 
    # create a box plot of ratings by restaurant and price level, using the "hue" parameter to differentiate between cheaper and expensive restaurants
    # customize the color scheme using the "palette" parameter
-   figure = sns.boxplot(x="restaurant_name", y="rating", hue="price_level", data=restaurants, palette="Set3")
-
-   # add labels and title
-   plt.xlabel("Restaurant")
-   plt.ylabel("Ratings")
+   figure = sns.boxplot(x="restaurant_name", y="rating", hue="cost", data=restaurants, palette="magma")
+   figure.tick_params(axis='x', labelrotation=90)
 
    # display the plot
    display(figure)
@@ -65,4 +62,37 @@ Label your axes and use clear titles
 ################################################
 Labels and titles are essential for effective data visualization. Make sure to label your axes clearly and provide a descriptive title for your visualization. This will help your audience understand the message you are trying to convey.
 
+Here's how you can add a title, a label for the X-axis, and a label for the Y-axis using *matplotlib* with *seaborn*:
+
+
+
+.. activecode:: ct_title
+   :language: python3
+
+   from tutorial.main import load_dataset, display
+   import seaborn as sns
+
+   # load the tips dataset from Seaborn
+   restaurants = load_dataset("restaurants")
+
+   # create the boxplot from above
+   figure = sns.boxplot(x="restaurant_name", y="rating", hue="cost", data=restaurants, palette="magma")
+   figure.tick_params(axis='x', labelrotation=90)
+
+   # add labels and title
+   figure.set_title("Restaurant ratings in Champaign, organized by cost")
+   figure.set_xlabel("Restaurant")
+   figure.set_ylabel("Ratings (1-5)")
+
+   # display the plot
+   display(figure)
+
+
+
+Display the figure with new labels:
+
+.. stdoutimage::
+  :source_id: ct_palette
+  :title: Figure with the Updated Title
+  :mime: image/png
 

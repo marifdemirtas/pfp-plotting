@@ -66,3 +66,11 @@ We will be using a slightly different version of this dataset, where the dataset
    # check the head
    print(weather.head()) 
 
+
+.. highlightedtextbox::
+   :title:
+   :color: #f4e36e
+   :highlight-color: #ffe53e
+   :highlight-on-load:
+   
+   Click on the arrow on the bottom right to move to the next page.

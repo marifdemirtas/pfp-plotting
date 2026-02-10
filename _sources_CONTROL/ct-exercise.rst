@@ -20,6 +20,16 @@
 Exercises
 ###########################################
 
+.. highlightedtextbox::
+   :title:
+   :color: #f4e36e
+   :highlight-color: #ffe53e
+   :highlight-on-load:
+   
+   These exercises provide some practice for the concepts we have covered so far. Feel free to go back to the previous pages using the arrow at the bottom left if you need a reminder on anything!
+
+
+
 .. image:: _static/weather-box.png
     :scale: 90%
     :align: center
@@ -79,3 +89,11 @@ Exercises
 
    Assume that you can obtain a large dataset from a movie theater chain. What of the following problems would be best addressed with a bar plot?
 
+
+.. highlightedtextbox::
+   :title:
+   :color: #f4e36e
+   :highlight-color: #ffe53e
+   :highlight-on-load:
+   
+   If you are done with the exercises, you can move to the practice test here: TODO. You will not be able to come back to this page!
