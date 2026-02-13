@@ -29,15 +29,16 @@ Plan 5 - Exercises
 --------------------
 
 .. mchoice:: bar_plot_scenarios
-   :answer_a: Finding out the movies that were seen by the most people
-   :feedback_a: Correct! Bar plots can show use the total number.
-   :answer_b: Finding out the movies that were the most divisive in terms of audience ratings
-   :feedback_b: No, a box plot would be more appropriate for this since we need to see the distribution of audience ratings.
-   :answer_c: Comparing the relation between the rating of a movie and the number of people who have seen it
-   :feedback_c: No, other plot types (such as a scatterplot) would be more appropriate for this.
+   :answer_a: Which movies were seen by *the most people*?
+   :feedback_a: Correct! Bar plots can show use the total number in each category (e.g. the tickets sold for each movie).
+   :answer_b: Which movies were more divisive in terms of audience ratings?
+   :feedback_b: No, a box plot would be more appropriate for this, since we need to see **the distribution of audience ratings** to understand how divisive each movie was.
+   :answer_c: What is the relation between the average rating of a movie and the number of people who have seen it?
+   :feedback_c: No, other plot types (such as a scatterplot) would be more appropriate for this, since we need to show the relation of two variables.
    :correct: a
 
-   Assume that you can obtain a large dataset from a movie theater chain. What of the following problems would be best addressed with a bar plot?
+   A movie theater chain shared a dataset of movies, which includes the number of tickets sold for each movie, as well as movie ratings from their audience members. They are asking you to create a report that analyzes several problems.
+   What of the following problems would be best addressed with **a bar plot**?
 
 
 

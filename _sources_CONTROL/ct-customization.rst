@@ -36,7 +36,7 @@ Changing color palettes
 --------------------------------
 
 
-Here is an example of how you can change the color palettes of your seaborn plots:
+Here is an example of how you can change the color palettes of your Seaborn plots:
 
 
 .. activecode:: ct_palette
@@ -73,8 +73,7 @@ Labeling your axes and using clear titles
 
 Labels and titles are essential for effective data visualization. Make sure to label your axes clearly and provide a descriptive title for your visualization. This will help your audience understand the message you are trying to convey.
 
-Here's how you can add a title, a label for the X-axis, and a label for the Y-axis using *seaborn*:
-
+Here's how you can add a title, a label for the X-axis, and a label for the Y-axis using Seaborn:
 
 
 .. activecode:: ct_title
@@ -103,7 +102,7 @@ Here's how you can add a title, a label for the X-axis, and a label for the Y-ax
 Display the figure with new labels:
 
 .. stdoutimage::
-  :source_id: ct_palette
+  :source_id: ct_title
   :title: Figure with the Updated Title
   :mime: image/png
 

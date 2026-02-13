@@ -332,8 +332,21 @@
   },
   {
     "code_template": {
+"changeable_areas": {
+      "object": [
+        "grid",
+        "figure"
+      ]
+    },
+    "changeable_areas_annotations": {
+      "object": "The object that contains the figure or the grid."
+    },
+    "changeable_areas_colors": {
+      "object": "#C3B1E1"
+    },
+
       "lines": [
-      "display(figure)"
+      "display(@@object@@)"
       ]
     },
     "goal": "Show the created figure",

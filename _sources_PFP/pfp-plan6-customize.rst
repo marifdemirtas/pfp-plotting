@@ -71,7 +71,7 @@ Plan 6 - Exercises
    :feedback_b: No, this would rotate the labels on the vertical axis (y-axis).
    :answer_c: figure.set_xlabel(45)
    :feedback_c: No, this would set the label for the x-axis to "45", but it would not rotate the labels.
-   :answer_d: figure.tick_params(axis='x', labelrotation=45)
+   :answer_d: figure.tick_params(axis='x', labelrotation=90)
    :feedback_d: No, this would rotate the labels so that they would seem as vertical.
    :correct: b
 

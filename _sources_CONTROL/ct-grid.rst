@@ -20,7 +20,7 @@
 Seaborn facet grids
 ###########################################
 
-FacetGrid is a powerful seaborn tool that allows you to visualize the distribution of one variable as well as the relationship between two variables, across levels of additional categorical variables. 
+FacetGrid is a powerful Seaborn tool that allows you to visualize the distribution of one variable as well as the relationship between two variables, across levels of additional categorical variables. 
 
 FacetGrid creates a grid of subplots based on the unique values in the categorical variable specified.
 
@@ -39,16 +39,16 @@ FacetGrid creates a grid of subplots based on the unique values in the categoric
    from tutorial.main import load_dataset, display
    import seaborn as sns
 
-   # Load the Weather dataset in long form
+   # Load the weather dataset in long form
    weather = load_dataset("weather_long")
 
-   # create a FacetGrid for measurement type vs measurement value
-   grid = sns.FacetGrid(weather, col="measurement_type", sharey=False, height=5, aspect=1.5)
+   # Create a FacetGrid with a plot for each 'measurement_type'
+   grid = sns.FacetGrid(weather, col="measurement_type", sharey=False)
 
-   # plot barplot for each measurement
+   # Plot barplot for each measurement
    grid.map(sns.barplot, "month", "value", palette='magma', errorbar=None)
+   grid.set_xticklabels(rotation=45)
 
-   # Plan 7: Visualize
    display(grid)
 
 

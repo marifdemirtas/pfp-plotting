@@ -44,21 +44,21 @@ Exercises
    =====
    weather = load_dataset("weather")
    =====
-   figure = sns.boxplot(x="year", y="temperature_average", data=weather)
+   figure = sns.boxplot(x="year", y="temperature_avg", data=weather)
    =====
-   figure = sns.barplot(x="year", y="temperature_average", data=weather)#distractor
+   figure = sns.barplot(x="year", y="temperature_avg", data=weather)#distractor
    =====
-   figure = sns.FacetGrid(x="month", y="temperature_average", data=weather)#distractor
+   figure = sns.FacetGrid(x="month", y="temperature_avg", data=weather)#distractor
    =====
-   figure = weather.map(sns.boxplot, x="year", y="temperature_average")#distractor
+   figure = weather.map(sns.boxplot, x="year", y="temperature_avg")#distractor
    =====
-   figure = sns.boxplot(x="month", y="temperature_average", data=weather)#distractor
+   figure = sns.boxplot(x="month", y="temperature_avg", data=weather)#distractor
    =====
-   figure = sns.barplot(x="temperature_average", y="month", data=weather)#distractor
+   figure = sns.barplot(x="temperature_avg", y="month", data=weather)#distractor
    =====
-   figure = sns.FacetGrid(x="temperature_average", y="year", data=weather)#distractor
+   figure = sns.FacetGrid(x="temperature_avg", y="year", data=weather)#distractor
    =====
-   figure = weather.map(sns.barplot, x="year", y="temperature_average")#distractor
+   figure = weather.map(sns.barplot, x="year", y="temperature_avg")#distractor
    =====
    display(figure)
    
@@ -78,33 +78,16 @@ Exercises
 
 
 .. mchoice:: bar_plot_scenarios
-   :answer_a: Finding out the movies that were seen by the most people
-   :feedback_a: Correct! Bar plots can show use the total number.
-   :answer_b: Finding out the movies that were the most divisive in terms of audience ratings
-   :feedback_b: No, a box plot would be more appropriate for this since we need to see the distribution of audience ratings.
-   :answer_c: Comparing the relation between the rating of a movie and the number of people who have seen it
-   :feedback_c: No, other plot types (such as a scatterplot) would be more appropriate for this.
+   :answer_a: Which movies were seen by *the most people*?
+   :feedback_a: Correct! Bar plots can show use the total number in each category (e.g. the tickets sold for each movie).
+   :answer_b: Which movies were more divisive in terms of audience ratings?
+   :feedback_b: No, a box plot would be more appropriate for this, since we need to see **the distribution of audience ratings** to understand how divisive each movie was.
+   :answer_c: What is the relation between the average rating of a movie and the number of people who have seen it?
+   :feedback_c: No, other plot types (such as a scatterplot) would be more appropriate for this, since we need to show the relation of two variables.
    :correct: a
 
-   Assume that you can obtain a large dataset from a movie theater chain. What of the following problems would be best addressed with a bar plot?
-
-
-.. fillintheblank:: fill-box
-
-   Fill in the blanks in the following code piece to plot the distribution of "sales" for each different "store". 
-   `sns.` |blank| ``(x = " `` |blank| ``", y = "`` |blank| ``", data=dataset)``
-
-    -   :boxplot:  Correct!
-        :barplot:  Incorrect: Since we are plotting the distribution, try 'barplot'.
-        :.*:    Incorrect: What type of plot could we use to plot distributions? Check the earlier example if you need a hint!
-    -   :store:  Correct!
-        :"store":  Almost correct! Note that we already have quotes around the blank space, so you do not need to put "store" into quotes.
-        :"stores": Almost correct! In this example, the variable name is "store", not "stores."
-        :stores: Almost correct! In this example, the variable name is "store", not "stores."
-        :x:  Incorrect: x-axis is our horizontal axis, and we want to have different categories we want to compare here. For instance, we are comparing different "stores" in this problem.
-    -   :sales:  Correct!
-        :"sales":  Almost correct! Note that we already have quotes around the blank space, so you do not need to put "sales" into quotes.
-        :x:  Incorrect: y-axis is our horizontal axis, and we want to have variable that we are interested in the distribution of. For instance, we are interested in the distribution of "sales" in this problem.
+   A movie theater chain shared a dataset of movies, which includes the number of tickets sold for each movie, as well as movie ratings from their audience members. They are asking you to create a report that analyzes several problems.
+   What of the following problems would be best addressed with **a bar plot**?
 
 
 
@@ -149,7 +132,7 @@ Exercises
    :feedback_b: No, this would rotate the labels on the vertical axis (y-axis).
    :answer_c: figure.set_xlabel(45)
    :feedback_c: No, this would set the label for the x-axis to "45", but it would not rotate the labels.
-   :answer_d: figure.tick_params(axis='x', labelrotation=45)
+   :answer_d: figure.tick_params(axis='x', labelrotation=90)
    :feedback_d: No, this would rotate the labels so that they would seem as vertical.
    :correct: b
 

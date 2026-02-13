@@ -30,7 +30,7 @@ Example 2: Comparing rainfall and temperatures in Champaign in the last ten year
 
 In the city of Champaign, the regional planning commission manages a weather dataset containing records of the total precipitation and the average temperature in the city from 2015 to 2024. The city wants to analyze the trends in the dataset to make sure they can accurately forecast future infrastructure needs and agricultural impacts for the local community.
 
-In the weather dataset, we have two types of measurement for each month: rainfall_total and temperatuve_avg.
+In the weather dataset, we have two types of measurement for each month: rainfall_total and temperature_avg.
 
 +------+----------+--------------------------+--------------------------+
 | year | month    | rainfall_total           | temperature_avg          |

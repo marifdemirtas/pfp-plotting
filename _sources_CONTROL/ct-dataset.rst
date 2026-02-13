@@ -20,9 +20,9 @@
 Sample Datasets
 ###########################################
 
-Seaborn provides several built-in functions that we can use for data visualization and statistical analysis. These datasets are stored in pandas dataframes, making them easy to use with Seaborn's plotting functions.
+Seaborn provides several built-in functions that we can use for data visualization and statistical analysis. These datasets are stored in Pandas dataframes, making them easy to use with Seaborn's plotting functions.
 
-In this tutorial, we created two example datasets we will use that are saved in the same Pandas DataFrame format. The first one shows ratings of 10 restaurants around the campus by 50 students.
+In this tutorial, we created two example datasets we will use that are saved in the same Pandas dataframe format. The first one shows ratings of 10 restaurants around the campus by 50 students.
 
 .. highlightedtextbox::
    :title:
@@ -40,10 +40,10 @@ Here's how to load and preview this example dataset:
 
    from tutorial.main import load_dataset
 
-   # Load the Restaurants dataset
+   # Load the restaurants dataset
    restaurants = load_dataset("restaurants")
 
-   # check the head
+   # Check the head
    print(restaurants.head()) 
 
 
@@ -55,10 +55,10 @@ Here's the other dataset, which shows records of the total precipitation and the
 
    from tutorial.main import load_dataset
 
-   # Load the Restaurants dataset
+   # Load the weather dataset
    weather = load_dataset("weather")
 
-   # check the head
+   # Check the head
    print(weather.head()) 
 
 
@@ -70,10 +70,10 @@ We will be using a slightly different version of this dataset, where the dataset
 
    from tutorial.main import load_dataset
 
-   # Load the Restaurants dataset
+   # Load the long form weather dataset
    weather = load_dataset("weather_long")
 
-   # check the head
+   # Check the head
    print(weather.head()) 
 
 

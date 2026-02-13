@@ -43,21 +43,21 @@ Exercises
    =====
    weather = load_dataset("weather")
    =====
-   figure = sns.boxplot(x="year", y="temperature_average", data=weather)
+   figure = sns.boxplot(x="year", y="temperature_avg", data=weather)
    =====
-   figure = sns.barplot(x="year", y="temperature_average", data=weather)#distractor
+   figure = sns.barplot(x="year", y="temperature_avg", data=weather)#distractor
    =====
-   figure = sns.FacetGrid(x="month", y="temperature_average", data=weather)#distractor
+   figure = sns.FacetGrid(x="month", y="temperature_avg", data=weather)#distractor
    =====
-   figure = weather.map(sns.boxplot, x="year", y="temperature_average")#distractor
+   figure = weather.map(sns.boxplot, x="year", y="temperature_avg")#distractor
    =====
-   figure = sns.boxplot(x="month", y="temperature_average", data=weather)#distractor
+   figure = sns.boxplot(x="month", y="temperature_avg", data=weather)#distractor
    =====
-   figure = sns.barplot(x="temperature_average", y="month", data=weather)#distractor
+   figure = sns.barplot(x="temperature_avg", y="month", data=weather)#distractor
    =====
-   figure = sns.FacetGrid(x="temperature_average", y="year", data=weather)#distractor
+   figure = sns.FacetGrid(x="temperature_avg", y="year", data=weather)#distractor
    =====
-   figure = weather.map(sns.barplot, x="year", y="temperature_average")#distractor
+   figure = weather.map(sns.barplot, x="year", y="temperature_avg")#distractor
    =====
    display(figure)
    

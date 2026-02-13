@@ -29,7 +29,7 @@ Example 1: Finding the most reliable restaurants in Champaign area
    
    We will start by exploring an example visualization problem about restaurants in Champaign. Read through the explanation below and run the code by clicking on 'Save and Run' to see how you can create a visualization for this problem!
 
-At the University of Illinois Urbana-Champaign, a group of students completed a survey asking 50 students to rate 10 restaurants around the campus. After creating their restaurant_ratings dataset, the group wants to analyze the rating distribution of the restaurants in order to determine which restaurants are the most consistent in terms of student opinion.
+At the University of Illinois Urbana-Champaign, a group of students completed a survey asking 50 students to rate 10 restaurants around the campus. After creating their *restaurants* dataset, the group wants to analyze the rating distribution of the restaurants in order to determine which restaurants are the most consistent in terms of student opinion.
 
 The *restaurants* dataset looks like this:
 
