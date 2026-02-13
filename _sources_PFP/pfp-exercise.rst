@@ -23,21 +23,20 @@ Exercises
 .. highlightedtextbox::
    :title:
    :color: #f4e36e
-   :highlight-color: #ffe53e
+   :highlight-color: #ff9b3e
    :highlight-on-load:
    
-   These exercises provide some practice for the concepts we have covered so far. Feel free to go back to the previous pages using the arrow at the bottom left if you need a reminder on anything!
-
-
-.. image:: _static/weather-box.png
-    :scale: 90%
-    :align: center
-    :alt: A plot example
+   These exercises provide some practice for the concepts we have covered so far. If you need to go back to the previous examples and look up a definition, use the arrow at the bottom left to go back, or click <a href="/index.html">HERE</a> to go back to the table of contents.
 
 
 .. parsonsprob:: parsons_box
    
-   Look at the plot provided above. What code could produce that? Drag and drop the lines of code from below in the correct order to achieve that plot. You will not use all of the blocks.
+      
+   .. image:: _static/weather-box.png
+      :scale: 90%
+      :align: center
+      :alt: A plot example
+   Look at the provided plot. What code could produce that? Drag and drop the lines of code from below in the correct order to achieve that plot. You will not use all of the blocks.
    
    -----
    import seaborn as sns
@@ -77,22 +76,14 @@ Exercises
    You are given a dataset that shows the average number of people who studied at each library on campus for each month in 2025. You want to see what libraries experience major changes in occupancy throughout the year. What line of code would be the most useful for visualizing this?
 
 
-.. mchoice:: bar_plot_scenarios
-   :answer_a: Finding out the movies that were seen by the most people
-   :feedback_a: Correct!
-   :answer_b: Finding out the movies that were the most divisive in terms of audience ratings
-   :feedback_b: No, a box plot would be more appropriate for this.
-   :answer_c: Comparing the relation between the rating of a movie and the number of people who have seen it
-   :feedback_c: No, other plot types (such as a scatterplot) would be more appropriate for this.
-   :correct: a
 
-   Assume that you can obtain a large dataset from a movie theater chain. What of the following problems would be best addressed with a bar plot?
+
 
 
 .. highlightedtextbox::
    :title:
    :color: #f4e36e
-   :highlight-color: #ffe53e
+   :highlight-color: #ff883e
    :highlight-on-load:
    
-   If you are done with the exercises, you can move to the practice test here: TODO. You will not be able to come back to this page!
+   If you are done with the exercises, click on the arrow on the bottom right to move to the last page of this tutorial!

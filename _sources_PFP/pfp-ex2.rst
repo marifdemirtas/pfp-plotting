@@ -20,12 +20,20 @@
 Example 2: Comparing rainfall and temperatures in Champaign in the last ten years
 ###########################################################################################################
 
+.. highlightedtextbox::
+   :title:
+   :color: #f4e36e
+   :highlight-color: #ffe53e
+   :highlight-on-load:
+   
+   Here's another example visualization problem that is about the weather data collected in Champaign. Read through the explanation below and run the code by clicking on 'Save and Run' to see how you can create a visualization for this problem!
+
 In the city of Champaign, the regional planning commission manages a weather dataset containing records of the total precipitation and the average temperature in the city from 2015 to 2024. The city wants to analyze the trends in the dataset to make sure they can accurately forecast future infrastructure needs and agricultural impacts for the local community.
 
-The weather dataset may include columns such as:
+In the weather dataset, we have two types of measurement for each month: rainfall_total and temperatuve_avg.
 
 +------+----------+--------------------------+--------------------------+
-| Year | Month    | Total Precipitation (in) | Average Temperature (°F) |
+| year | month    | rainfall_total           | temperature_avg          |
 +======+==========+==========================+==========================+
 | 2015 | January  | 1.69                     | 25.4                     |
 +------+----------+--------------------------+--------------------------+
@@ -38,33 +46,33 @@ The weather dataset may include columns such as:
 | 2015 | May      | 6.07                     | 66.1                     |
 +------+----------+--------------------------+--------------------------+
 
-The goal is to create two side-by-side bar plots using the average value of total precipitation and average temperature for each month. For this exercise, we will use a modified version of this dataset to be in long-form. That version of the dataset will look like this:
+The goal is to create two side-by-side bar plots using the average value of total rainfall and average temperature for each month. For this exercise, we will use a modified version of this dataset to be in *long-form*. That version of the dataset will look like this:
 
 +------+----------+--------------------------+--------+
-| Year | Month    | measurement_name         | value  |
+| Year | Month    | measurement_type         | value  |
 +======+==========+==========================+========+
-| 2015 | January  | Total Precipitation (in) | 1.69   |
+| 2015 | January  |  rainfall_total          | 1.69   |
 +------+----------+--------------------------+--------+
-| 2015 | January  | Average Temperature (°F) | 25.4   |
+| 2015 | January  | temperature_avg          | 25.4   |
 +------+----------+--------------------------+--------+
-| 2015 | February | Total Precipitation (in) | 1.6    |
+| 2015 | February |  rainfall_total          | 1.6    |
 +------+----------+--------------------------+--------+
-| 2015 | February | Average Temperature (°F) | 20     |
+| 2015 | February | temperature_avg          | 20     |
 +------+----------+--------------------------+--------+
-| 2015 | March    | Total Precipitation (in) | 3.72   |
+| 2015 | March    | rainfall_total           | 3.72   |
 +------+----------+--------------------------+--------+
-| 2015 | March    | Average Temperature (°F) | 54.6   |
+| 2015 | March    | temperature_avg          | 54.6   |
 +------+----------+--------------------------+--------+
-| 2015 | April    | Total Precipitation (in) | 3.72   |
+| 2015 | April    |  rainfall_total          | 3.72   |
 +------+----------+--------------------------+--------+
-| 2015 | April    | Average Temperature (°F) | 54.6   |
+| 2015 | April    | temperature_avg          | 54.6   |
 +------+----------+--------------------------+--------+
-| 2015 | May      | Total Precipitation (in) | 6.07   |
+| 2015 | May      |  rainfall_total          | 6.07   |
 +------+----------+--------------------------+--------+
-| 2015 | May      | Average Temperature (°F) | 66.1   |
+| 2015 | May      | temperature_avg          | 66.1   |
 +------+----------+--------------------------+--------+
 
-This dataset is in *long form*, which means that different measurements for the same month (e.g. total precipitation and average temperature for January 2015) are separate rows of the table, as opposed to the *wide form*, where different measurements for the same month were in different columns of the same row. Seaborn uses long form data for most operations, and this is why we provide the long form version of the weather dataset.
+This dataset is in *long form*, which means that different measurements for the same month (e.g. total rainfall and average temperature for January 2015) are represented in separate rows of the table, as opposed to the *wide form*, where different measurements for the same month were in different columns in the same row. Seaborn uses long form data for most operations, and this is why we provide the long form version of the weather dataset.
 
 
 .. activecode:: pfp-weather-ex
@@ -77,10 +85,8 @@ This dataset is in *long form*, which means that different measurements for the 
 
    dataset = load_dataset("weather_long")
    
-   # Plan 4: Initialize FacetGrid
+   # Plan 4: Create Grid of Multiple Plots
    grid = sns.FacetGrid(dataset, col='measurement_type', sharey=False)
-
-   # Plan 5: Map Plot To Grid
    grid.map(sns.barplot, 'month', 'value', palette='magma', errorbar=None)
 
    # Plan 6: Customize Figure
@@ -97,15 +103,13 @@ This dataset is in *long form*, which means that different measurements for the 
   :mime: image/png
 
 
-This code probably seems a bit complicated. We have two new plans, in addition to plans from the previous example. Click on each of them to learn more.
-
+Again, this example might look complicated at first. However, we can break it into four plans, and we have already learned about three of them. Let's explore the new plan, which shows how to create a grid of plots.
 
 .. toctree::
    :maxdepth: 1
 
    pfp-plan1-intro
    pfp-plan4-gridinit
-   pfp-plan5-gridplot
    pfp-plan6-customize
    pfp-plan7-display
 
@@ -113,10 +117,7 @@ This code probably seems a bit complicated. We have two new plans, in addition t
    :plan: Import Packages and Load Data
 
 .. plandisplay::
-   :plan: Initialize FacetGrid
-
-.. plandisplay::
-   :plan: Map Plot To Grid
+   :plan: Create Grid of Multiple Plots
 
 .. plandisplay::
    :plan: Customize Figure

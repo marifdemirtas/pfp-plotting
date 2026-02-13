@@ -20,6 +20,15 @@
 Example 1: Finding the most reliable restaurants in Champaign area
 ###########################################################################################################
 
+
+.. highlightedtextbox::
+   :title:
+   :color: #f4e36e
+   :highlight-color: #ffe53e
+   :highlight-on-load:
+   
+   We will start by exploring an example visualization problem about restaurants in Champaign. Read through the explanation below and run the code by clicking on 'Save and Run' to see how you can create a visualization for this problem!
+
 At the University of Illinois Urbana-Champaign, a group of students completed a survey asking 50 students to rate 10 restaurants around the campus. After creating their restaurant_ratings dataset, the group wants to analyze the rating distribution of the restaurants in order to determine which restaurants are the most consistent in terms of student opinion.
 
 The *restaurants* dataset looks like this:
@@ -73,8 +82,16 @@ The goal is to use the student ratings of each restaurant to create 10 box plots
   :mime: image/png
 
 
-This code probably seems a bit complicated. In this ebook, we will break down each example into a few common "plans". This example is made up of four plans. Click on each of them to learn more.
+.. highlightedtextbox::
+   :title:
+   :color: #f4e36e
+   :highlight-color: #ffe53e
+   :highlight-on-load:
+   
+   This code probably seems a bit complicated. In this ebook, we will break down each example into a few common "plans". Each "plan" is a piece of code that we will study in more detail.
+   
 
+This example is made up of four plans. Click on each of them to learn more.
 
 .. toctree::
    :maxdepth: 1
@@ -83,6 +100,14 @@ This code probably seems a bit complicated. In this ebook, we will break down ea
    pfp-plan3-box
    pfp-plan6-customize
    pfp-plan7-display
+
+.. highlightedtextbox::
+   :title:
+   :color: #f4e36e
+   :highlight-color: #ffe53e
+   :highlight-on-load:
+   
+   For each plan, you can see a 'template', which shows the generic version of that piece of code, and you can see an 'example', which shows what values you could put in that template in this particular example.
 
 .. plandisplay::
    :plan: Import Packages and Load Data

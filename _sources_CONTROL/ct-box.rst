@@ -23,6 +23,15 @@ Seaborn Box Plots
 Box plots are a type of visualization that shows the distribution of a dataset. They are commonly used to compare the distribution of one or more variables across different categories.
 
 
+.. highlightedtextbox::
+   :title:
+   :color: #f4e36e
+   :highlight-color: #ffe53e
+   :highlight-on-load:
+   
+   Run the code below to see an example of a boxplot using the 'restaurants' dataset.
+
+
 .. activecode:: ct_box_restaurant_1
    :language: python3
 
@@ -46,7 +55,7 @@ Display the figure below:
   :mime: image/png
 
 
-Customize the box plot by grouping restaurants by price level.
+Customize the box plot by grouping restaurants by average cost of a meal at each restaurant.
 
 .. activecode:: ct_box_2
    :language: python3

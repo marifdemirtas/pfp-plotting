@@ -24,6 +24,13 @@ FacetGrid is a powerful seaborn tool that allows you to visualize the distributi
 
 FacetGrid creates a grid of subplots based on the unique values in the categorical variable specified.
 
+.. highlightedtextbox::
+   :title:
+   :color: #f4e36e
+   :highlight-color: #ffe53e
+   :highlight-on-load:
+   
+   Run the code below to see an example of how you can use FacetGrid to create two plots in a single figure to show two quantitites side by side.
 
 
 .. activecode:: ct_grid_1

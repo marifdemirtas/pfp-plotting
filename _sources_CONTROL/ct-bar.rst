@@ -22,6 +22,16 @@ Seaborn Bar Plots
 
 Bar plots are used to visualize the relationship between a categorical variable and a continuous variable. In a bar plot, each bar represents the mean or median (or any aggregation) of the continuous variable for each category. In Seaborn, bar plots can be created using the barplot() function. 
 
+.. highlightedtextbox::
+   :title:
+   :color: #f4e36e
+   :highlight-color: #ffe53e
+   :highlight-on-load:
+   
+   Run the code below to see an example of a barplot using the 'weather' dataset.
+
+
+
 .. activecode:: ct_bar_weather_1
    :language: python3
 
@@ -37,7 +47,6 @@ Bar plots are used to visualize the relationship between a categorical variable 
    display(figure)
 
 
-
 Display the generated plot below:
 
 .. stdoutimage::
@@ -46,7 +55,7 @@ Display the generated plot below:
   :mime: image/png
 
 
-Let's customize this plot by including the 'year' column from the dataset.
+Let's customize this plot by including the 'year' column from the dataset to see the differences in average temperature across years for each month.
 
 
 .. activecode:: ct_bar_weather_2

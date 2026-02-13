@@ -20,7 +20,7 @@
    "dataset = load_dataset(@@file_path@@)"
       ]
     },
-    "goal": "Import necessary packages and load data for visualization",
+    "goal": "",
     "group": "",
     "order": "",
     "plan_metadata": {
@@ -52,22 +52,22 @@
         ]
       },
       "changeable_areas_annotations": {
-        "x": "The column to be plotted on the horizontal axis",
-        "y": "The column to be plotted on the vertical axis", 
-        "hue": "The column to be used for categorizing variables (optional)",
+        "x": "The variable to be plotted on the horizontal axis",
+        "y": "The variable to be plotted on the vertical axis", 
+        "hue": "The variable to be used for categorizing variables (optional)",
         "palette": "The color palette for the plot"
       },
       "changeable_areas_colors": {
-        "x": "#ff1100",
-        "y": "#ff1100", 
-        "hue": "#ff1100",
-        "palette": "#ff1100"
+        "x": "#E8B4B8",
+        "y": "#B9C4AD", 
+        "hue": "#E2C391",
+        "palette": "#A3B1C6"
       },
       "lines": [
       "figure = sns.boxplot(x=@@x@@, y=@@y@@, hue=@@hue@@, palette=@@palette@@, data=dataset)"
       ]
     },
-    "goal": "Create a box plot that shows...",
+    "goal": "Create a boxplot figure on a dataset using provided variables",
     "group": "",
     "order": "",
     "plan_metadata": {
@@ -77,6 +77,56 @@
     },
     "plan_name": "Create a Box Plot",
     "id": 2,
+    "questions": [
+    ]
+  },
+
+
+  {
+    "code_template": {
+      "changeable_areas": {
+        "x": [
+          "month"
+        ],
+        "y": [
+          "temperature_avg",
+          "rainfall_total"
+        ],
+        "hue": [
+          "year"
+        ],
+        "palette": [
+          "magma",
+          "Set2",
+          "Set3"
+        ]
+      },
+      "changeable_areas_annotations": {
+        "x": "The variable to be plotted on the horizontal axis",
+        "y": "The variable to be plotted on the vertical axis", 
+        "hue": "The variable to be used for categorizing variables (optional)",
+        "palette": "The color palette for the plot"
+      },
+      "changeable_areas_colors": {
+        "x": "#E8B4B8",
+        "y": "#B9C4AD", 
+        "hue": "#E2C391",
+        "palette": "#A3B1C6"
+      },
+      "lines": [
+      "figure = sns.barplot(x=@@x@@, y=@@y@@, hue=@@hue@@, palette=@@palette@@, data=dataset)"
+      ]
+    },
+    "goal": "Create a barplot figure on a dataset using provided variables",
+    "group": "",
+    "order": "",
+    "plan_metadata": {
+      "description": "",
+      "instruction": "",
+      "usage": ""
+    },
+    "plan_name": "Create a Bar Plot",
+    "id": 9,
     "questions": [
     ]
   },
@@ -98,14 +148,14 @@
     "share_y_axis": "Whether subplots should share the same vertical scale"
   },
   "changeable_areas_colors": {
-    "measurement": "#74B49B",
-    "share_y_axis": "#5C8D89"
+    "measurement": "#E8B4B8",
+    "share_y_axis": "#B9C4AD"
   },
       "lines": [
       "grid = sns.FacetGrid(dataset, col=@@measurement@@, sharey=@@share_y_axis@@)"
       ]
     },
-    "goal": "Initialize FacetGrid shows...",
+    "goal": "Create a grid that will be used to plot multiple figures",
     "group": "",
     "order": "",
     "plan_metadata": {
@@ -113,7 +163,65 @@
       "instruction": "",
       "usage": ""
     },
-    "plan_name": "Initialize FacetGrid",
+    "plan_name": "Split Data into Grid for Multiple Plots",
+    "id": 3,
+    "questions": [
+    ]
+  },
+  {
+    "code_template": {
+"changeable_areas": {
+    "data_split_col": [
+      "measurement_type"
+    ],
+    "plot_type": [
+      "sns.barplot",
+      "sns.scatterplot",
+      "sns.boxplot"
+    ],
+    "x": [
+      "month",
+      "year"
+    ],
+    "y": [
+      "measurement_value"
+    ],
+    "palette": [
+      "deep",
+      "muted",
+      "pastel",
+      "rocket"
+    ]
+  },
+  "changeable_areas_annotations": {
+    "data_split_col": "The column that is used to split a dataset. A different plot is created in the grid for each value of this column.",
+    "plot_type": "The Seaborn plotting function to apply to the grid",
+    "x": "The column for the horizontal axis within each cell of the grid",
+    "y": "The column for the vertical axis within each cell of the grid",
+    "palette": "The color palette for the plots"
+
+  },
+  "changeable_areas_colors": {
+    "data_split_col": "#C3B1E1",
+    "plot_type": "#E2C391",
+    "x": "#E8B4B8",
+    "y": "#B9C4AD", 
+    "palette": "#A3B1C6"
+  },
+      "lines": [
+      "grid = sns.FacetGrid(dataset, col=@@data_split_col@@, sharey=False)",
+      "grid.map(@@plot_type@@, @@x@@, @@y@@, palette=@@palette@@, errorbar=None)"
+      ]
+    },
+    "goal": "Create a grid that plots multiple figures on subsets of the dataset",
+    "group": "",
+    "order": "",
+    "plan_metadata": {
+      "description": "",
+      "instruction": "",
+      "usage": ""
+    },
+    "plan_name": "Create Grid of Multiple Plots",
     "id": 3,
     "questions": [
     ]
@@ -150,10 +258,10 @@
     "palette": "The color mapping for the mapped plots"
   },
   "changeable_areas_colors": {
-    "plot_type": "#8B5CF6",
-    "x": "#6366F1",
-    "y": "#6366F1",
-    "palette": "#94A3B8"
+    "plot_type": "#E2C391",
+    "x": "#E8B4B8",
+    "y": "#B9C4AD", 
+    "palette": "#A3B1C6"
   },
       "lines": [
       "grid.map(@@plot_type@@, @@x@@, @@y@@, palette=@@palette@@, errorbar=None)"
@@ -167,7 +275,7 @@
       "instruction": "",
       "usage": ""
     },
-    "plan_name": "Map Plot To Grid",
+    "plan_name": "Map Plotting Function to Each Data Split on Grid",
     "id": 4,
     "questions": [
     ]
@@ -176,13 +284,13 @@
     "code_template": {
 "changeable_areas": {
       "title": [
-        "My Plot Title"
+        "'Consistency of Rankings for Champaign Restaurants'"
       ],
       "xlabel": [
-        "X Axis Label"
+        "'Restaurants'"
       ],
       "ylabel": [
-        "Y Axis Label"
+        "'Ratings (1-5)'"
       ],
       "angle": [
         0,
@@ -197,10 +305,10 @@
       "angle": "Rotation angle for x-axis tick labels (in degrees)"
     },
     "changeable_areas_colors": {
-      "title": "#4F46E5",
-      "xlabel": "#4F46E5",
-      "ylabel": "#4F46E5",
-      "angle": "#0EA5E9"
+      "title": "#C3B1E1",
+      "xlabel": "#B9C4AD",
+      "ylabel": "#E2C391",
+      "angle": "#A3B1C6"
     },
       "lines": [
    "figure.set_title(@@title@@)",
@@ -209,7 +317,7 @@
    "figure.tick_params(axis='x', labelrotation=@@angle@@)"
       ]
     },
-    "goal": "Customization options...",
+    "goal": "Add titles and labels to a figure",
     "group": "",
     "order": "",
     "plan_metadata": {
@@ -224,23 +332,11 @@
   },
   {
     "code_template": {
-      "changeable_areas": {
-        "display_function": [
-          "display(plot)",
-          "figure.savefig('file.png')"
-        ]
-      },
-      "changeable_areas_annotations": {
-        "display_function": "Different display methods"
-      },
-      "changeable_areas_colors": {
-        "display_function": "#ccebc5"
-      },
       "lines": [
-      "@@display_function@@"
+      "display(figure)"
       ]
     },
-    "goal": "Map a plot type on a FacetGrid shows...",
+    "goal": "Show the created figure",
     "group": "",
     "order": "",
     "plan_metadata": {

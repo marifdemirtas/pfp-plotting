@@ -37,9 +37,13 @@ Another notable feature of Seaborn is its ability to create complex multi-plot v
 How this ebook works
 ::::::::::::::::::::
 
-.. admonition:: TODO
+.. admonition:: This tutorial is the first part of today's lab activity.
    
-   TODO
+   This is similar to an online tutorial you could find online. We expect you to spend 30-45 minutes reading all the pages included in this tutorial, which cover important Seaborn concepts. On most pages, there will be code examples that you can run to create a figure. We also provide some exercises at the end, so that you can practice what you have learned.
+
+   After finishing this tutorial, you will move to the second part of today's lab, which will be a short, ungraded quiz where you can show what you will learn in the tutorial! 
+
+   This is an individual activity, but if you encounter any technical problems, please let the course staff know!
 
 
 Table of Contents
@@ -58,6 +62,7 @@ Putting it together
    :maxdepth: 1
 
    pfp-exercise.rst
+   final.rst
 
 .. highlightedtextbox::
    :title:

@@ -23,6 +23,16 @@ Sample Datasets
 Seaborn provides several built-in functions that we can use for data visualization and statistical analysis. These datasets are stored in pandas dataframes, making them easy to use with Seaborn's plotting functions.
 
 In this tutorial, we created two example datasets we will use that are saved in the same Pandas DataFrame format. The first one shows ratings of 10 restaurants around the campus by 50 students.
+
+.. highlightedtextbox::
+   :title:
+   :color: #f4e36e
+   :highlight-color: #ffe53e
+   :highlight-on-load:
+   
+   Run the code examples on this page by clicking "Save and Run" to explore data loading in Seaborn.
+
+
 Here's how to load and preview this example dataset:
 
 .. activecode:: ct_data_loading_restaurant
@@ -73,4 +83,4 @@ We will be using a slightly different version of this dataset, where the dataset
    :highlight-color: #ffe53e
    :highlight-on-load:
    
-   Click on the arrow on the bottom right to move to the next page.
+   If you have explored all three datasets, click on the arrow on the bottom right to move to the next page.

@@ -26,9 +26,23 @@ Plan 3 - What parts can be customized to use this plan?
 -------------------------------------------------------
 Replace the *x* and *y* values with the columns that you want to compare from the dataset, replace *hue* with with another column from the dataset if you would like to split your plot into categories (or remove *hue* if you do not have any other columns to split), and change *palette* to other preset seaborn color schemes. 
 
+
+
 Plan 3 - Exercises
 --------------------
-TODO
+
+.. fillintheblank:: fitb_box
+   :code_template:
+      import seaborn as sns
+      dataset = load_dataset('sales_data')
+      figure = sns.@@blank1@@(x = "@@blank2@@", y = "@@blank3@@", data=dataset)
+      display(figure)
+   :correct: ["boxplot", "store", "sales"]
+   :feedback: ["The first box is incorrect. What type of plot could we use to plot distributions? Check the earlier example if you need a hint!", "The second box is incorrect. x-axis is our horizontal axis, and we want to have different categories we want to compare here. For instance, we are comparing different 'stores' in this problem.", "The third box is incorrect. y-axis is our vertical axis, and we want to have variable that we are interested in the distribution of. For instance, we are interested in the distribution of 'sales' in this problem."]
+   :placeholder: ["", "", ""]
+
+   Fill in the blanks in the following code piece to plot the distribution of "sales" for each different "store".
+
 
 .. highlightedtextbox::
    :title:
@@ -36,4 +50,4 @@ TODO
    :highlight-color: #ffe53e
    :highlight-on-load:
 
-   If you completed all the activities on this page, click on the arrow on the bottom right to continue.
+   If you have completed the activities on this page, click on the arrow on the bottom right to move to the next page.

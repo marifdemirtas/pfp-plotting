@@ -37,4 +37,4 @@ While both libraries have their strengths and weaknesses, Seaborn is generally b
    :highlight-color: #ffe53e
    :highlight-on-load:
    
-   Click on the arrow on the bottom right to move to the next page.
+   Click on the arrow on the bottom right when you are done reading this page.

@@ -22,10 +22,19 @@ Customizing Seaborn plots
 
 Seaborn is a powerful data visualization library that provides numerous ways to customize the appearance of plots. Customizing Seaborn plots is an essential part of creating meaningful and visually appealing visualizations. 
 
-Here are some examples of customizing seaborn plots:
 
-Changing Color Palettes
-########################
+.. highlightedtextbox::
+   :title:
+   :color: #f4e36e
+   :highlight-color: #ffe53e
+   :highlight-on-load:
+   
+   On this page, we cover two important customization options: changing the color palettes of plots, and changing labels and titles.
+
+
+Changing color palettes
+--------------------------------
+
 
 Here is an example of how you can change the color palettes of your seaborn plots:
 
@@ -58,11 +67,13 @@ Display the output of the modified color palette below:
 
 
 
-Label your axes and use clear titles
-################################################
+Labeling your axes and using clear titles
+----------------------------------------------------------------
+
+
 Labels and titles are essential for effective data visualization. Make sure to label your axes clearly and provide a descriptive title for your visualization. This will help your audience understand the message you are trying to convey.
 
-Here's how you can add a title, a label for the X-axis, and a label for the Y-axis using *matplotlib* with *seaborn*:
+Here's how you can add a title, a label for the X-axis, and a label for the Y-axis using *seaborn*:
 
 
 
@@ -96,3 +107,12 @@ Display the figure with new labels:
   :title: Figure with the Updated Title
   :mime: image/png
 
+
+
+.. highlightedtextbox::
+   :title:
+   :color: #f4e36e
+   :highlight-color: #ffe53e
+   :highlight-on-load:
+   
+   Click on the arrow on the bottom right to move to the next page.

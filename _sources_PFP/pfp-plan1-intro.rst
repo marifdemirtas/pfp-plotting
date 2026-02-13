@@ -16,7 +16,9 @@ Plan 1: Import Packages and Load Data
 
 The first step in data visualization is importing the necessary Python packages, and loading our dataset in a format that Python can understand. This includes importing Seaborn, but you might need additional packages, such as Matplotlib or Pandas, based on your problem.
 
-For Seaborn, we usually have to put the data into something called a Pandas DataFrame. For this tutorial, we provide you with a custom Python function, ‘load_dataset‘, which does all the data processing in the background and provides you with a DataFrame object you can use right away. Click on the code editor below to see the first 5 entries in the restaurant dataset.
+Seaborn provides several built-in functions that we can use for data visualization and statistical analysis. These datasets are stored in pandas dataframes, making them easy to use with Seaborn's plotting functions.
+
+For this tutorial, we provide you with a custom Python function, ‘load_dataset‘, which does all the data processing in the background and provides you with a DataFrame object you can use right away. Click on the code editor below to see the first example dataset, which shows ratings of 10 restaurants around the campus by 50 students.
 
 .. activecode:: pfp-p1_data_loading_restaurant
    :language: python3
@@ -32,7 +34,7 @@ For Seaborn, we usually have to put the data into something called a Pandas Data
 
 Plan 1 - When to use this plan?
 --------------------------------
-Use this plan when you want to visualize any dataset.
+Use this plan when you want to visualize any dataset. You will need to import packages and load data for all visualizations!
 
 
 Plan 1 - What parts can be customized to use this plan?
@@ -46,4 +48,4 @@ Replace the *data_path* with the name of the dataset you want to load.
    :highlight-color: #ffe53e
    :highlight-on-load:
 
-   If you completed all the activities on this page, click on the arrow on the bottom right to continue.
+   If you have read through the description of this plan, click on the arrow on the bottom right to move to the next page.

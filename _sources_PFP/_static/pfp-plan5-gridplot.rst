@@ -8,11 +8,11 @@
 .. qnum::
    :start: 1
 
-Plan 5: Map a FacetGrid
+Plan 5: Map Plotting Function to Each Data Split on Grid
 ========================
 
 .. plandisplay:: plans.json
-   :plan: Map Plot To Grid
+   :plan: Map Plotting Function to Each Data Split on Grid
 
 After creating the subplots in the grid, each subplot is still empty and needs to be filled with bar plots to visualize the data within each category. This plan allows for all the sub plots to be mapped at the same time, without needing to go through each plot to choose the data.
 
