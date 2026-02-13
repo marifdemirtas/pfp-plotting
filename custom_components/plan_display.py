@@ -94,7 +94,7 @@ class PlanDisplay(Directive):
         # Add the randomize button
         html_code += f"""
         <div class="button-container">
-            <button class="plan-button examples-button" onclick="randomizeValues_{instance_id}()">Show Examples</button>
+            <button class="plan-button examples-button" onclick="randomizeValues_{instance_id}()">Show Example Values for Template</button>
             <button class="plan-button template-button" onclick="replacePlaceholder_{instance_id}()">Show Template</button>
         </div>
         </div>
